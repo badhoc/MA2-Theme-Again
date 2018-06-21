@@ -17,6 +17,9 @@
 <meta property="fb:app_id" content="393971940674968"/>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="p:domain_verify" content="b7bacd6ec49f99a26a86bf8919d827ab"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- add in responsive -->
+<meta name="DCS.dcsipa" content="1" />
+
 
 <title><?php
 	/*
