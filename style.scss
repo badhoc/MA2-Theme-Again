@@ -1,0 +1,258 @@
+/*
+Theme Name: MoneyAware 2.0
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: twentythirteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import "sass/reset.scss";
+
+@font-face {
+    font-family: 'Corbel';
+    src: url("fonts/Corbel.eot");
+    src: url("fonts/Corbel.eot?#iefix") format("embedded-opentype"), url("fonts/Corbel.ttf") format("truetype"), url("fonts/Corbel.svg#Corbel") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$xs: 480px;
+$sm: 48em;
+$md: 769px;
+$lg: 1024px;
+
+$primary-purple:#6B3374;
+$white:#FFF;
+$text:#333;
+$background:#F3F1ED;
+$border:#E5E1D9;
+$cat1:#F08B1E;
+$cat2:#AFC82B;
+$cat3:#057EAB;
+$cat4:#Df4BDA;
+$cat5:#6B3374;
+
+
+
+@mixin breakpoint($class) {
+
+  @if $class == max-xs {
+    @media (max-width: $xs - 1) { @content; }
+  }
+
+  @else if $class == max-sm {
+    @media (max-width: $sm - 1) { @content; }
+  }
+
+  @else if $class == max-md {
+    @media (max-width: $md - 1) { @content; }
+  }
+
+  @else if $class == max-lg {
+    @media (max-width: $lg - 1) { @content; }
+  }
+
+  @else if $class == min-xs {
+    @media (min-width: $xs) { @content; }
+  }
+
+
+  @else if $class == min-sm {
+    @media (min-width: $sm) { @content; }
+  }
+
+  @else if $class == min-md {
+    @media (min-width: $md) { @content; }
+  }
+
+  @else if $class == min-lg {
+    @media (min-width: $lg) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+* {
+    &,
+    &:before,
+    &:after {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        }
+}
+
+
+body {
+	background:$background;
+	font-size:16px;
+	line-height:1.6rem;
+	font-family:arial;
+}
+
+main { display:block; }
+a { color:$primary-purple; }
+
+.page {
+	max-width:850px;
+	margin:0 auto;
+}
+
+.flex-container{
+  @include breakpoint(min-sm){
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+     justify-content: space-between;
+  }
+}
+
+.banner-image {
+	width:100%;
+	height:100px;
+	background:url(images/banner01.jpg) no-repeat;
+	background-size: cover;
+	@include breakpoint(min-sm){
+		height:340px;
+	}
+}
+
+.banner-image--4 {
+	background-image:url(images/banner02.jpg);
+}
+
+header .page { position:relative; }
+header .logo img { width: 200px; padding: 10px 0 0; }
+
+footer {background: $white; padding: 3rem 0; font-size: 13px;
+  .disclaimer { font-size: 11px; line-height: 18px; font-style: italic; }
+  #site-generator {margin-bottom: 1rem;}
+}
+
+.nav--header {
+	position:absolute;
+	right:0;
+	bottom:10px;
+	a {
+		color:$text;
+		text-decoration:none;
+		padding: 10px 5px;
+    border-bottom: 4px solid transparent;
+
+    &.cat4:hover,&.cat4.active { border-color:$cat1; }
+    &.cat1592:hover,&.cat1592.active  { border-color:$cat2;  }
+    &.cat1593:hover,&.cat1593.active  { border-color:$cat3;  }
+    &.cat1594:hover,&.cat1594.active  { border-color:$cat4; }
+    &.cat1595:hover,&.cat1595.active  { border-color:$cat5; }
+
+	}
+}
+
+.border-v { border-left:solid 3px; }
+.border-h { border-bottom:solid 3px; }
+
+h1, h2 {
+	font-family:'Corbel';
+}
+
+h1 { padding-left:1rem; margin-bottom:2rem; font-size:2rem; line-height:2.6rem; }
+h2 { margin-bottom:1rem; font-size:1.6rem; line-height:2rem; }
+
+p { margin-bottom:1rem; }
+
+.cat4 { border-color:$cat1;}
+.cat1592 { border-color:$cat2; }
+.cat1593 { border-color:$cat3;}
+.cat1594 { border-color:$cat4; }
+.cat1595 { border-color:$cat5; }
+
+
+
+
+.page--cat .post {
+	width:100%;
+	background:$white;
+	display:inline-block;
+  margin-bottom: 1rem;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+	a { text-decoration:none; color:#333; }
+  p, h2 {padding-left: 1rem; padding-right: 1rem;}
+  h2 {margin-top:2rem;}
+  p { margin-bottom: 2rem;}
+  .border-h { margin-top: auto;}
+	@include breakpoint(min-sm){
+		width:32%;
+	}
+}
+
+.page--cat .post:first-child {
+	width:100%;
+  h2 {margin-top:0;}
+	.wp-post-image { display:none; }
+}
+
+.article, .page--cat .post:first-child {
+	position:relative;
+	z-index:2;
+	padding:2rem;
+	border:1px solid $border;
+	@include breakpoint(min-sm){
+		padding:50px 100px;
+		margin-top:-60px;
+	}
+}
+
+$bgcolors: (
+  white:$white
+);
+
+@each $name, $hex in $bgcolors {
+  .u-bg--#{$name} {
+    background: $hex;
+  }
+}
+
+.icon--facebook,
+.icon--twitter {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+}
+
+.icon--facebook{
+  background: url(images/facebook.png) no-repeat;
+}
+
+.icon--twitter{
+  background: url(images/twitter.png) no-repeat;
+}
+
+.list-menu {
+  list-style-type: none;
+  padding: 0;
+  li {
+    display: inline-block;
+    margin-right: 1rem;
+    a {color: $text;text-decoration: none;
+      &:hover {
+        color: $primary-purple;
+        text-decoration: underline;
+      }}
+  }
+}

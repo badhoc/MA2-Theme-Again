@@ -1,0 +1,38 @@
+.required-fields {
+	display: none !important;
+}
+.social_connect_ui {
+	width: 199px !important;
+}
+.html-garbage {
+	width: 350px !important;
+}
+.the-tabs li {
+	display: inline; 
+}
+.module-tabs {
+	position: relative;
+}
+.categories-list li {
+	margin:0;
+	height: 36px;
+}
+.categories-list li .total {
+	*top:-20px;
+}
+.widget_search #s {
+	width:55%;
+}
+.post_date {
+	background: url(images/date-bg.jpg) center center no-repeat;
+	background-color: transparent !important;
+}
+.post-links {
+	display: inline; 
+}
+.floatleft {
+	display: inline; 
+}
+.menu .children li a:hover {
+	color: #6C3475 !important;
+}
