@@ -43,8 +43,6 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-
-
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -85,6 +83,13 @@ fjs.parentNode.insertBefore(js, fjs);
 	<div class="page">
 		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
 <!-- old menu design was in here -->
+
+<div class="burger">
+<span id="topline">-</span>
+<span id="midline">-</span>
+<span id="bottomline">-</span>
+<p class="menuLabel">Menu</p>
+</div>
 
 <nav class="nav2" role="navigation">
 	<?php wp_nav_menu( array(

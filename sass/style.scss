@@ -79,10 +79,6 @@ body {
 main { display:block; }
 a { color:$primary-purple; }
 
-.page {
-	max-width:850px;
-	margin:0 auto;
-}
 
 .flex-container{
   @include breakpoint(min-sm){
