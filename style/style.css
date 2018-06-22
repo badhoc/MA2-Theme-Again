@@ -166,16 +166,6 @@ img {
   max-width: 100%;
 }
 
-/* line 1, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_navigation.scss */
-.menu {
-  background: red !important;
-}
-
-/* line 5, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_navigation.scss */
-#menu-nav-manu {
-  border: 4px;
-}
-
 @font-face {
   font-family: 'Corbel';
   src: url("/fonts/Corbel.eot");
@@ -500,11 +490,6 @@ p {
 .list-menu li a:hover {
   color: #6B3374;
   text-decoration: underline;
-}
-
-/* line 262, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.menu {
-  background: red;
 }
 
 /*# sourceMappingURL=../style/style.map */
