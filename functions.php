@@ -70,8 +70,8 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  *
  * @since Twenty Ten 1.0
  */
- 
- 
+
+
 function twentyten_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
@@ -114,9 +114,9 @@ function twentyten_setup() {
 		// Support flexible heights.
 		'uploads'       => true
 	);
-	
+
 	add_theme_support( 'custom-header', $custom_header_support );
-	
+
 	if ( ! function_exists( 'get_custom_header' ) ) {
 		// This is all for compatibility with versions of WordPress prior to 3.4.
 		define( 'HEADER_TEXTCOLOR', '' );
@@ -150,7 +150,7 @@ function twentyten_setup() {
 			/* translators: header image description */
 			'description' => __( 'Hanoi Plant', 'twentyeleven' )
 			)
-		
+
 	) );
 }
 endif;
@@ -206,6 +206,7 @@ function twentyten_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
+
 
 /**
  * Returns a "Continue Reading" link for excerpts
@@ -510,6 +511,14 @@ function new_author_posts_link() {
 				get_the_author()
 			);
 	}
-	
+
 	echo apply_filters( 'new_author_posts_link', $link );
 }
+
+//function added 22/6/18 to add in 60second debt test show_recent_comments_widget_style
+
+function sixtySecondDiv() {
+	return '<div class="60sec">test div <a href="#">Take the Test</a></div>';
+}
+
+add_shortcode('sixtySecond','sixtySecondDiv');
