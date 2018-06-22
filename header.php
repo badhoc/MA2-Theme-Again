@@ -11,7 +11,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_directory'); ?>/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" />
 <meta name="twitter:site" content="@MoneyAware">
 <meta property="twitter:account_id" content="1592145024" />
 <meta property="fb:app_id" content="393971940674968"/>
@@ -84,29 +84,13 @@ fjs.parentNode.insertBefore(js, fjs);
 <header class="u-bg--white">
 	<div class="page">
 		<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="/sites/moneyaware/wp-content/themes/MoneyAware%20Wordpress%20theme/images/money-aware-logo.png" alt="MoneyAware logo" /></a>
-		<nav class="nav--header"><?php //wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?><?php
-			$categories = get_categories( array(
-    'orderby' => 'name',
-    'parent'  => 0
-) );
+<!-- old menu design was in here -->
 
-$thisCat = get_the_category();
-$activePage = $thisCat[0]->cat_name;
-
-$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-foreach ( $categories as $category ) {
-
-		$activeClass = get_category_link( $category->term_id ) == $actual_link ? 'active' : '';
-    printf( '<a href="%1$s" class="cat%3$s %4$s">%2$s</a> ',
-        esc_url( get_category_link( $category->term_id ) ),
-        esc_html( $category->cat_name ),
-				esc_html( $category->term_id ),
-				$activeClass
-    );
-}
-
-			?></nav>
+<nav class="nav2" role="navigation">
+	<?php wp_nav_menu( array(
+		'menu' => 'Nav Menu'
+	)); ?>
+</nav>
 	</div>
 
 </header>
