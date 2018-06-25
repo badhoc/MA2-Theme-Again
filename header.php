@@ -11,7 +11,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" />
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" /> -->
+<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />
 <meta name="twitter:site" content="@MoneyAware">
 <meta property="twitter:account_id" content="1592145024" />
 <meta property="fb:app_id" content="393971940674968"/>
@@ -58,6 +59,7 @@
 	 */
 	wp_head();
 ?>
+<script type="text/JavaScript" async src="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/scripts.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -81,17 +83,21 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <header class="u-bg--white">
 	<div class="page">
+		<div class="header-top">
 		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
 <!-- old menu design was in here -->
 
-<div class="burger">
-<span id="topline">-</span>
-<span id="midline">-</span>
-<span id="bottomline">-</span>
-<p class="menuLabel">Menu</p>
+	<div class="burger">
+		<div class="burger-container">
+		  <div class="bar bar1"></div>
+		  <div class="bar bar2"></div>
+		  <div class="bar bar3"></div>
+		</div>
+	<!--	<p class="menuLabel">Menu</p> -->
+	</div>
 </div>
 
-<nav class="nav2" role="navigation">
+<nav class="nav2 hide-it" role="navigation">
 	<?php wp_nav_menu( array(
 		'menu' => 'Nav Menu'
 	)); ?>
