@@ -12,6 +12,13 @@
 	display:flex;
 	justify-content: space-between;
 	background-color: $white;
+	position:fixed;
+	width:100%;
+	@media screen and (min-width:$md) {
+		position:relative;
+		z-index: 3;
+		width:25%;
+	}
 }
 
 .hide-it {
@@ -84,8 +91,10 @@
 	position:fixed;
 	z-index: 3;
 	width:100%;
+	margin-top:65px;
 	@media screen and (min-width: $md){
-		position:relative;		
+		position:relative;
+		margin-top:0;
 	}
 }
 
