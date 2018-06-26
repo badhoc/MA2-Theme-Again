@@ -556,56 +556,29 @@ footer #site-generator {
   margin-bottom: 1rem;
 }
 
-/* line 116, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+/* removed 26-6-18
 .nav--header {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
+	position:absolute;
+	right:0;
+	bottom:10px;
+	a {
+		color:$text;
+		text-decoration:none;
+		padding: 10px 5px;
+    border-bottom: 4px solid transparent;
+
+    &.cat4:hover,&.cat4.active { border-color:$cat1; }
+    &.cat1592:hover,&.cat1592.active  { border-color:$cat2;  }
+    &.cat1593:hover,&.cat1593.active  { border-color:$cat3;  }
+    &.cat1594:hover,&.cat1594.active  { border-color:$cat4; }
+    &.cat1595:hover,&.cat1595.active  { border-color:$cat5; }
+
+	}
 }
 
-/* line 120, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.nav--header a {
-  color: #333;
-  text-decoration: none;
-  padding: 10px 5px;
-  border-bottom: 4px solid transparent;
-}
-
-/* line 126, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.nav--header a.cat4:hover, .nav--header a.cat4.active {
-  border-color: #F08B1E;
-}
-
-/* line 127, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.nav--header a.cat1592:hover, .nav--header a.cat1592.active {
-  border-color: #AFC82B;
-}
-
-/* line 128, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.nav--header a.cat1593:hover, .nav--header a.cat1593.active {
-  border-color: #057EAB;
-}
-
-/* line 129, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.nav--header a.cat1594:hover, .nav--header a.cat1594.active {
-  border-color: #Df4BDA;
-}
-
-/* line 130, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.nav--header a.cat1595:hover, .nav--header a.cat1595.active {
-  border-color: #6B3374;
-}
-
-/* line 135, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.border-v {
-  border-left: solid 3px;
-}
-
-/* line 136, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
-.border-h {
-  border-bottom: solid 3px;
-}
-
+.border-v { border-left:solid 3px; }
+.border-h { border-bottom:solid 3px; }
+*/
 /* line 138, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 h1, h2 {
   font-family: 'Corbel';
