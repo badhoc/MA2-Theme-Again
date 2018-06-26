@@ -470,6 +470,31 @@ img {
   }
 }
 
+/* line 36, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-making-money h1 {
+  border-color: #F08B1E;
+}
+
+/* line 41, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-saving-money h1 {
+  border-color: #AFC82B;
+}
+
+/* line 46, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-living-with-debt h1 {
+  border-color: #057EAB;
+}
+
+/* line 51, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-debt-news h1 {
+  border-color: #Df4BDA;
+}
+
+/* line 56, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-budgeting h1 {
+  border-color: #6B3374;
+}
+
 /* line 63, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -575,10 +600,13 @@ footer #site-generator {
 
 	}
 }
-
-.border-v { border-left:solid 3px; }
-.border-h { border-bottom:solid 3px; }
 */
+/* line 135, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+.border-v {
+  border-left: solid 3px;
+}
+
+/* .border-h { border-bottom:solid 3px; } */
 /* line 138, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 h1, h2 {
   font-family: 'Corbel';
