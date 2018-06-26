@@ -26,8 +26,8 @@
   }
 }
 
-article > .attachment-post-thumbnail {
-  @media screena and (max-width:$md) {
+article .attachment-post-thumbnail {
+  @media screen and (max-width:$md) {
     display:none;
   }
 }
