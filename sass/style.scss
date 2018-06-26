@@ -16,7 +16,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @import "_variables.scss";
 @import "reset.scss";
-@import "modules/_navigation";
+@import "modules/_navigation.scss";
+@import "modules/_60seconds.scss";
 
 @mixin breakpoint($class) {
 
