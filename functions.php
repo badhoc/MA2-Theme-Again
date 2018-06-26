@@ -518,7 +518,7 @@ function new_author_posts_link() {
 //function added 22/6/18 to add in 60second debt test show_recent_comments_widget_style
 
 function sixtySecondDiv() {
-	return '<div class="60sec">test div <a href="#">Take the Test</a></div>';
+	return '<div class="60sec">test div <a href="#">Take the Test</a></div>'; //replace everything after return with the new HTML
 }
 
 add_shortcode('sixtySecond','sixtySecondDiv');
