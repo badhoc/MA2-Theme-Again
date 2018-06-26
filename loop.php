@@ -127,7 +127,7 @@
 
 	<?php else : ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 
 
@@ -138,13 +138,18 @@
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
+  
 				<?php the_excerpt(); ?>
 
-				<?php $categories = get_the_category();
+				<p class="readMore">
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
+				</p>
+
+		<!--		<?php $categories = get_the_category();
 				if (!empty($categories)) {
 					printf('<div class="border-h cat%1$s"></div>',esc_html( $categories[0]->term_id ));
 				}
-			?>
+			?> -->
 
 		<!-- .entry-utility -->
 

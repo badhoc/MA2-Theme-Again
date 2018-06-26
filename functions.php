@@ -518,7 +518,58 @@ function new_author_posts_link() {
 //function added 22/6/18 to add in 60second debt test show_recent_comments_widget_style
 
 function sixtySecondDiv() {
-	return '<div class="60sec">test div <a href="#">Take the Test</a></div>';
+	return '<div class="60sec">test div <a href="#">Take the Test</a></div>'; //replace everything after return with the new HTML
 }
 
 add_shortcode('sixtySecond','sixtySecondDiv');
+
+.dr-tool{   background-color: #6B3374;
+            display: flex;
+            justify-content: space-between;
+            }
+
+.DR-text{   color: white;
+            margin-left: 20px;
+            font-family: arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5em;
+            }
+
+.DR-button{ background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            border-radius: 6px;
+            padding: 8px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 16px;
+            font-family: arial, sans-serif;
+            margin-right: 20px;
+            margin-bottom: auto;
+            margin-top: auto;   
+            }
+
+p {         margin: 8px;
+            color: #333333;
+            font-family: arial, sans-serif;
+            }
+
+    
+
+
+/* Extra small devices (phones, 480px and down) */
+
+@media only screen and (max-width: 480px) 
+
+    {
+       
+.dr-tool{   flex-direction: column;
+            }
+
+.DR-button{ margin-left: 20px;
+            margin-bottom: 15px;
+            margin-top: 5px;
+            margin-right: auto;
+            }
+
+    }
