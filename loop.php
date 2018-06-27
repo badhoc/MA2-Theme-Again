@@ -129,20 +129,20 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
-
-
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail(); ?>
+				<?php else :?>
+					<img src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
 				<?php endif; ?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
-  
+
 				<?php the_excerpt(); ?>
 
 				<p class="readMore">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
+					<a class="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
 				</p>
 
 		<!--		<?php $categories = get_the_category();

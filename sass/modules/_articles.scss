@@ -57,3 +57,12 @@ article .attachment-post-thumbnail {
     border-color: $cat5;
   }
 }
+
+.readmore-btn {
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+}
+.readmore-btn:hover {
+    background-color: lightblue;
+  }
