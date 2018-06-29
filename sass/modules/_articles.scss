@@ -57,3 +57,10 @@ article .attachment-post-thumbnail {
     border-color: $cat5;
   }
 }
+
+article > .attachment-post-thumbnail {
+  @media screena and (max-width:$md) {
+    display:none;
+  }
+}
+
