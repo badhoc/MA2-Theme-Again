@@ -50,6 +50,16 @@
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
+<div class="page--cat post cat-desc">
+	<h1><?php single_cat_title(); ?></h1>
+	<?php
+						$category_description = category_description();
+						if ( ! empty( $category_description ) )
+							echo $category_description;
+ ?>
+
+</div>
+
 <?php while ( have_posts() ) : the_post(); ?>
 
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
@@ -129,20 +139,20 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
-
-
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail(); ?>
+				<?php else :?>
+					<img src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
 				<?php endif; ?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
-  
+
 				<?php the_excerpt(); ?>
 
 				<p class="readMore">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
+					<a class="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
 				</p>
 
 		<!--		<?php $categories = get_the_category();
