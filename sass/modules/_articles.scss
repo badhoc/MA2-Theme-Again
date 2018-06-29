@@ -12,19 +12,55 @@
   .category-making-money {
     border-color: $cat1;
   }
+
   .category-saving-money {
     border-color: $cat2;
   }
+
   .category-living-with-debt {
     border-color: $cat3;
   }
+
   .category-debt-news {
     border-color: $cat4;
   }
+
   .category-budgeting {
     border-color: $cat5;
   }
+
 }
+/* end of lex container */
+
+/* heading on blog posts */
+.category-making-money {
+  h1  {
+    border-color: $cat1;
+  }
+}
+
+.category-saving-money {
+  h1 {
+    border-color: $cat2;
+  }
+}
+
+.category-living-with-debt {
+  h1 {
+    border-color: $cat3;
+  }
+}
+
+  .category-debt-news {
+    h1 {
+      border-color: $cat4;
+  }
+}
+  .category-budgeting {
+    h1  {
+      border-left: 3px solid $cat5;
+    }
+  }
 
 article .attachment-post-thumbnail {
   @media screen and (max-width:$md) {
@@ -32,39 +68,89 @@ article .attachment-post-thumbnail {
   }
 }
 
-.category-making-money {
-  h1 {
-    border-color: $cat1;
+.post:first-child {
+  img {
+    display:none;
   }
 }
-.category-saving-money {
-  h1 {
-    border-color: $cat2;
+
+/* add the left border to the first post on the homepage */
+
+.category-making-money.post:first-child {
+      h2 {
+      border-left: 3px solid $cat1;
+    }
   }
-}
-.category-living-with-debt {
-  h1 {
-    border-color: $cat3;
-  }
-}
-.category-debt-news {
-  h1 {
-    border-color: $cat4;
-  }
-}
-.category-budgeting {
-  h1 {
-    border-color: $cat5;
-  }
-}
+.category-saving-money.post:first-child {
+        h2 {
+        border-left: 3px solid $cat2;
+      }
+    }
+.category-living-with-debt.post:first-child {
+          h2 {
+          border-left: 3px solid $cat3;
+        }
+      }
+  .category-debt-news.post:first-child {
+            h2 {
+            border-left: 3px solid $cat4;
+          }
+        }
+.category-budgeting.post:first-child {
+          h2  {
+              border-left: 3px solid $cat5;
+            }
+          }
+
+/* placeholder styling */
 
 .readmore-btn {
   border: 1px solid black;
   padding: 5px 10px 5px 10px;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .readmore-btn:hover {
     background-color: lightblue;
   }
 
+/* what is moneyAware styling */
+
+.moneyawareBlurb {
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content:space-between;
+  @media screen and (min-width:$md){
+    flex-flow:row nowrap;
+  }
+  .blurb {
+    background-color:$white;
+    width:100%;
+    padding:2em;
+    margin-bottom:1em;
+    @media screen and (min-width:$md){
+      width:66%;
+    }
+  }
+  .sixtySecond-category {
+    width:100%;
+    background-color:$primary-purple;
+    color:$white;
+    padding:2em;
+    margin-bottom:1em;
+    @media screen and (min-width:$md){
+      width:32%;
+    }
+    p {
+      margin-bottom:2em;
+    }
+    a {
+      color:$white;
+      padding: 0.5em 2em;
+      border-radius:$br1;
+      border:1px solid $white;
+      text-decoration:none;
+    }
+  }
+}
+/* end of money aware */

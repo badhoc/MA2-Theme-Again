@@ -27,7 +27,7 @@
 								esc_html( get_the_title() )
 							);
 						} else {
-							echo "<h1 class='border-v cat%1\$s'>".get_the_title()."</h1>";
+							echo "<h1 class=''>".get_the_title()."</h1>";
 						}
 					?>
 
