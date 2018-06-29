@@ -195,13 +195,13 @@ img {
   background-color: #FFF;
   position: fixed;
   width: 100%;
+  z-index: 3;
 }
 
 @media screen and (min-width: 769px) {
   /* line 11, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_navigation.scss */
   .header-top {
     position: relative;
-    z-index: 3;
     width: 25%;
   }
 }
@@ -463,12 +463,14 @@ img {
   border-color: #6B3374;
 }
 
-@media screena and (max-width: 769px) {
+
+@media screen and (max-width: 769px) {
   /* line 29, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
-  article > .attachment-post-thumbnail {
+  article .attachment-post-thumbnail {
     display: none;
   }
 }
+
 
 /* line 1, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_blogposts.scss */
 .article {
@@ -492,13 +494,41 @@ img {
 }
 
 /* line 64, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
+/* line 36, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-making-money h1 {
+  border-color: #F08B1E;
+}
+
+/* line 41, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-saving-money h1 {
+  border-color: #AFC82B;
+}
+
+/* line 46, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-living-with-debt h1 {
+  border-color: #057EAB;
+}
+
+/* line 51, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-debt-news h1 {
+  border-color: #Df4BDA;
+}
+
+/* line 56, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_articles.scss */
+.category-budgeting h1 {
+  border-color: #6B3374;
+}
+
+/* line 63, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 74, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 body {
   background: #EEEEEE;
   font-size: 16px;
@@ -506,18 +536,15 @@ body {
   font-family: arial;
 }
 
-/* line 81, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 main {
   display: block;
 }
 
-/* line 82, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 a {
   color: #6B3374;
 }
 
 @media (min-width: 48em) {
-  /* line 85, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
   .flex-container {
     display: -ms-flex;
     display: -webkit-flex;
@@ -527,7 +554,7 @@ a {
   }
 }
 
-/* line 95, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .banner-image {
   width: 100%;
   height: 165px;
@@ -536,48 +563,44 @@ a {
 }
 
 @media (min-width: 48em) {
-  /* line 95, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
   .banner-image {
     height: 340px;
   }
 }
 
-/* line 105, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .banner-image--4 {
   background-image: url(images/banner02.jpg);
 }
 
-/* line 109, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 header .page {
   position: relative;
 }
 
-/* line 110, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 header .logo img {
   width: 200px;
   padding: 10px 0 0;
 }
 
-/* line 112, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 footer {
   background: #FFF;
   padding: 3rem 0;
   font-size: 13px;
 }
 
-/* line 113, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 footer .disclaimer {
   font-size: 11px;
   line-height: 18px;
   font-style: italic;
 }
 
-/* line 114, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 footer #site-generator {
   margin-bottom: 1rem;
 }
 
-/* no longer needed 26/6/18
+
 .nav--header {
 	position:absolute;
 	right:0;
@@ -600,13 +623,18 @@ footer #site-generator {
 .border-v { border-left:solid 3px; }
 .border-h { border-bottom:solid 3px; }
 
-*/
-/* line 142, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
+
+.border-v {
+  border-left: solid 3px;
+}
+
+/* .border-h { border-bottom:solid 3px; } */
+/* line 138, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 h1, h2 {
   font-family: 'Corbel';
 }
 
-/* line 146, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 h1 {
   padding-left: 1rem;
   margin-bottom: 2rem;
@@ -614,44 +642,42 @@ h1 {
   line-height: 2.6rem;
 }
 
-/* line 147, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 h2 {
   margin-bottom: 1rem;
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-/* line 149, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 p {
   margin-bottom: 1rem;
 }
 
-/* line 151, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .cat4 {
   border-color: #F08B1E;
 }
 
-/* line 152, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .cat1592 {
   border-color: #AFC82B;
 }
 
-/* line 153, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .cat1593 {
   border-color: #057EAB;
 }
 
-/* line 154, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .cat1594 {
   border-color: #Df4BDA;
 }
 
-/* line 155, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .cat1595 {
   border-color: #6B3374;
 }
 
-/* line 160, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post {
   width: 100%;
   background: #FFF;
@@ -663,56 +689,52 @@ p {
   flex-direction: column;
 }
 
-/* line 169, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .page--cat .post a {
   text-decoration: none;
   color: #333;
 }
 
-/* line 170, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post p, .page--cat .post h2 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
-/* line 171, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .page--cat .post h2 {
   margin-top: 2rem;
 }
 
-/* line 172, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post p {
   margin-bottom: 2rem;
 }
 
-/* line 173, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post .border-h {
   margin-top: auto;
 }
 
 @media (min-width: 48em) {
-  /* line 160, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
   .page--cat .post {
     width: 32%;
   }
 }
 
-/* line 179, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post:first-child {
   width: 100%;
 }
 
-/* line 181, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post:first-child h2 {
   margin-top: 0;
 }
 
-/* line 182, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .page--cat .post:first-child .wp-post-image {
   display: none;
 }
 
-/* line 185, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .article, .page--cat .post:first-child {
   position: relative;
   z-index: 2;
@@ -721,19 +743,19 @@ p {
 }
 
 @media (min-width: 48em) {
-  /* line 185, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
   .article, .page--cat .post:first-child {
     padding: 50px 100px;
     margin-top: -60px;
   }
 }
 
-/* line 201, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .u-bg--white {
   background: #FFF;
 }
 
-/* line 206, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .icon--facebook,
 .icon--twitter {
   display: inline-block;
@@ -743,35 +765,30 @@ p {
   background-size: 30px;
 }
 
-/* line 215, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .icon--facebook {
   background: url(images/facebook.png) no-repeat;
 }
 
-/* line 219, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .icon--twitter {
   background: url(images/twitter.png) no-repeat;
 }
 
-/* line 223, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
+
 .list-menu {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 226, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .list-menu li {
   display: inline-block;
   margin-right: 1rem;
 }
 
-/* line 229, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .list-menu li a {
   color: #333;
   text-decoration: none;
 }
 
-/* line 230, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 .list-menu li a:hover {
   color: #6B3374;
   text-decoration: underline;

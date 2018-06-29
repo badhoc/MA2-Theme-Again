@@ -26,8 +26,43 @@
   }
 }
 
-article > .attachment-post-thumbnail {
-  @media screena and (max-width:$md) {
+article .attachment-post-thumbnail {
+  @media screen and (max-width:$md) {
     display:none;
   }
 }
+
+.category-making-money {
+  h1 {
+    border-color: $cat1;
+  }
+}
+.category-saving-money {
+  h1 {
+    border-color: $cat2;
+  }
+}
+.category-living-with-debt {
+  h1 {
+    border-color: $cat3;
+  }
+}
+.category-debt-news {
+  h1 {
+    border-color: $cat4;
+  }
+}
+.category-budgeting {
+  h1 {
+    border-color: $cat5;
+  }
+}
+
+.readmore-btn {
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+}
+.readmore-btn:hover {
+    background-color: lightblue;
+  }
