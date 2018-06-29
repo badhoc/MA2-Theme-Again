@@ -114,26 +114,7 @@ footer {background: $white; padding: 3rem 0; font-size: 13px;
   .disclaimer { font-size: 11px; line-height: 18px; font-style: italic; }
   #site-generator {margin-bottom: 1rem;}
 }
-/*
-.nav--header {
-	position:absolute;
-	right:0;
-	bottom:10px;
-	a {
-		color:$text;
-		text-decoration:none;
-		padding: 10px 5px;
-    border-bottom: 4px solid transparent;
 
-    &.cat4:hover,&.cat4.active { border-color:$cat1; }
-    &.cat1592:hover,&.cat1592.active  { border-color:$cat2;  }
-    &.cat1593:hover,&.cat1593.active  { border-color:$cat3;  }
-    &.cat1594:hover,&.cat1594.active  { border-color:$cat4; }
-    &.cat1595:hover,&.cat1595.active  { border-color:$cat5; }
-
-	}
-}
-*/
 .border-v { border-left:solid 3px; }
 /* .border-h { border-bottom:solid 3px; } */
 
@@ -151,8 +132,6 @@ p { margin-bottom:1rem; }
 .cat1593 { border-color:$cat3;}
 .cat1594 { border-color:$cat4; }
 .cat1595 { border-color:$cat5; }
-
-
 
 
 .page--cat .post {

@@ -600,7 +600,6 @@ footer #site-generator {
   margin-bottom: 1rem;
 }
 
-
 .nav--header {
 	position:absolute;
 	right:0;
@@ -629,8 +628,6 @@ footer #site-generator {
   border-left: solid 3px;
 }
 
-/* .border-h { border-bottom:solid 3px; } */
-/* line 138, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 h1, h2 {
   font-family: 'Corbel';
 }
@@ -649,7 +646,6 @@ h2 {
   line-height: 2rem;
 }
 
-
 p {
   margin-bottom: 1rem;
 }
@@ -657,7 +653,6 @@ p {
 .cat4 {
   border-color: #F08B1E;
 }
-
 
 .cat1592 {
   border-color: #AFC82B;
@@ -694,11 +689,11 @@ p {
   color: #333;
 }
 
-
 .page--cat .post p, .page--cat .post h2 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 .page--cat .post h2 {
   margin-top: 2rem;
 }
@@ -715,6 +710,7 @@ p {
 
 @media (min-width: 48em) {
 
+
   .page--cat .post {
     width: 32%;
   }
@@ -725,11 +721,9 @@ p {
   width: 100%;
 }
 
-
 .page--cat .post:first-child h2 {
   margin-top: 0;
 }
-
 
 .page--cat .post:first-child .wp-post-image {
   display: none;
