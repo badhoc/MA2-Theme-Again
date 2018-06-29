@@ -50,6 +50,16 @@
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
+<div class="page--cat post cat-desc">
+	<h1><?php single_cat_title(); ?></h1>
+	<?php
+						$category_description = category_description();
+						if ( ! empty( $category_description ) )
+							echo $category_description;
+ ?>
+
+</div>
+
 <?php while ( have_posts() ) : the_post(); ?>
 
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
@@ -138,7 +148,7 @@
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
-  
+
 				<?php the_excerpt(); ?>
 
 				<p class="readMore">

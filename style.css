@@ -481,6 +481,16 @@ img {
   border-radius: 100px;
 }
 
+/* line 11, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_blogposts.scss */
+#author-avatar {
+  display: inline-flex;
+}
+
+/* line 16, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/modules/_blogposts.scss */
+.cat-desc p {
+  margin-bottom: 0 !important;
+}
+
 /* line 64, C:/MAMP/htdocs/wordpress/wp-content/themes/MoneyAware 2/sass/style.scss */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
