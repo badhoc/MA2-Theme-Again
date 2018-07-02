@@ -24,7 +24,7 @@
 						get_sidebar( 'footer' );
 					?>
 
-					<div id="footer-nav">
+				<!--	<div id="footer-nav">
 							<ul class="list-menu">
 								<li>
 									<a href="#link" class="icon--twitter">&nbsp;</a>
@@ -46,6 +46,7 @@
 								</li>
 							</ul>
 					</div>
+				-->
 
 					<div id="site-generator">
 							<div class="footer-logo"></div>

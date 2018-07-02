@@ -9,7 +9,7 @@
 ?>
 
 
-			<ul class="sidebar">
+			<ul class="sidebar testing123">
 
 <?php
 	/* When we call the dynamic_sidebar() function, it'll spit out
