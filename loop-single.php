@@ -31,10 +31,6 @@
 						}
 					?>
 
-
-
-
-
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
 				<!-- .entry-content -->

@@ -8,8 +8,8 @@
  */
 ?>
 
-		
-			<ul class="xoxo">
+
+			<ul class="sidebar">
 
 <?php
 	/* When we call the dynamic_sidebar() function, it'll spit out
@@ -31,8 +31,8 @@
 		<?php endif; // end primary widget area ?>
 			</ul>
 		</div><!-- #primary .widget-area -->
-		
-		
+
+
 
 <?php
 	// A second sidebar for widgets, just because.

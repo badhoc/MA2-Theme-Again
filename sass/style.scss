@@ -16,50 +16,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @import "_variables.scss";
 @import "reset.scss";
+@import "mixins.scss";
 @import "modules/_navigation.scss";
 @import "modules/_articles.scss";
 @import "modules/_blogposts.scss";
+@import "modules/_sidebar.scss";
 
 
-@mixin breakpoint($class) {
-
-  @if $class == max-xs {
-    @media (max-width: $xs - 1) { @content; }
-  }
-
-  @else if $class == max-sm {
-    @media (max-width: $sm - 1) { @content; }
-  }
-
-  @else if $class == max-md {
-    @media (max-width: $md - 1) { @content; }
-  }
-
-  @else if $class == max-lg {
-    @media (max-width: $lg - 1) { @content; }
-  }
-
-  @else if $class == min-xs {
-    @media (min-width: $xs) { @content; }
-  }
-
-
-  @else if $class == min-sm {
-    @media (min-width: $sm) { @content; }
-  }
-
-  @else if $class == min-md {
-    @media (min-width: $md) { @content; }
-  }
-
-  @else if $class == min-lg {
-    @media (min-width: $lg) { @content; }
-  }
-
-  @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
-  }
-}
 
 * {
     &,
@@ -132,43 +95,6 @@ p { margin-bottom:1rem; }
 .cat1593 { border-color:$cat3;}
 .cat1594 { border-color:$cat4; }
 .cat1595 { border-color:$cat5; }
-
-
-.page--cat .post {
-	width:100%;
-	background:$white;
-	display:inline-block;
-  margin-bottom: 1rem;
-  display: -ms-flex;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-	a { text-decoration:none; color:#333; }
-  p, h2 {padding-left: 1rem; padding-right: 1rem;}
-  h2 {margin-top:2rem;}
-  p { margin-bottom: 2rem;}
-  .border-h { margin-top: auto;}
-	@include breakpoint(min-sm){
-		width:32%;
-	}
-}
-
-.page--cat .post:first-child {
-	width:100%;
-  h2 {margin-top:0;}
-	.wp-post-image { display:none; }
-}
-
-.article, .page--cat .post:first-child {
-	position:relative;
-	z-index:2;
-	padding:2rem;
-	border:1px solid $border;
-	@include breakpoint(min-sm){
-		padding:50px 100px;
-		margin-top:-60px;
-	}
-}
 
 $bgcolors: (
   white:$white

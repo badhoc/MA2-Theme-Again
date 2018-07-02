@@ -19,6 +19,14 @@
  */
 ?>
 
+<?php /* If on a category page or not the homepage change the number of posts shown from 7 to 6 */ ?>
+<?php if(!is_home()){
+    global $query_string;
+    parse_str( $query_string, $args );
+    $args['posts_per_page'] = 6;
+    query_posts($args);
+} ?>
+
 <main class="page page--cat">
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
@@ -147,7 +155,7 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail(); ?>
 				<?php else :?>
-					<img src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
+					<img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
 				<?php endif; ?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -181,13 +189,11 @@ echo "<div class='moneyawareBlurb'>
 			</div>
 			<div class='sixtySecond-category'>
 			<p>Worried about money?<br>Take the 60 second debt test</p>
-			<a href='#''>take the test</a></div>
+			<a href='/worried-about-money'>take the test</a></div>
 			</div>";
 		}
 ?>
 <?php endwhile; // End the loop. Whew. ?>
-https://code.tutsplus.com/tutorials/how-to-create-infinite-scroll-pagination--wp-24873
-
 
 </section>
 
