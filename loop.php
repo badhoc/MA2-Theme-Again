@@ -50,7 +50,22 @@
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
-<?php while ( have_posts() ) : the_post(); ?>
+	 <?php if (!is_home()) { /* only display on categories not homepage */ ?>
+				<div class="page--cat post cat-desc">
+					<h1 class="border-v"><?php single_cat_title(); ?></h1>
+					<?php
+										$category_description = category_description();
+										if ( ! empty( $category_description ) )
+											echo $category_description;
+				 ?>
+
+				</div>
+<?php } ?>
+
+<?php $counter = 0;
+			while ( have_posts() ) : the_post();
+			$counter++;
+			?>
 
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
 
@@ -129,20 +144,20 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
-
-
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail(); ?>
+				<?php else :?>
+					<img src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
 				<?php endif; ?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
-  
+
 				<?php the_excerpt(); ?>
 
 				<p class="readMore">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
+					<a class="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
 				</p>
 
 		<!--		<?php $categories = get_the_category();
@@ -157,7 +172,19 @@
 
 
 	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
-
+<?php if ($counter == 3 && !is_home() || $counter == 4 && is_home())
+{
+echo "<div class='moneyawareBlurb'>
+			<div class='blurb'>
+				<h2>What is MoneyAware?</h2>
+				<p>MoneyAware is part of StepChange Debt Charity. We're dedicated to providing advice and tips for those managing on a tight budget, and highlighting newsworthy issues that affect those living with debt.</p>
+			</div>
+			<div class='sixtySecond-category'>
+			<p>Worried about money?<br>Take the 60 second debt test</p>
+			<a href='#''>take the test</a></div>
+			</div>";
+		}
+?>
 <?php endwhile; // End the loop. Whew. ?>
 https://code.tutsplus.com/tutorials/how-to-create-infinite-scroll-pagination--wp-24873
 

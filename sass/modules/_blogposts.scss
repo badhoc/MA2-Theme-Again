@@ -1,0 +1,20 @@
+.article {
+  display:flex;
+  flex-flow:column wrap;
+}
+
+
+.avatar {
+  border-radius: 100px;
+}
+
+#author-avatar {
+  display:inline-flex;
+}
+
+.cat-desc {
+  p {
+    margin-bottom:0!important;
+  }
+
+}
