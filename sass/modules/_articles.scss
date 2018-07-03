@@ -68,6 +68,7 @@ article .attachment-post-thumbnail {
   }
 }
 
+
 .page--cat .post {
 	width:100%;
 	background:$white;
@@ -77,10 +78,10 @@ article .attachment-post-thumbnail {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
-	a { text-decoration:none; color:$charcoal; }
   p, h2 {padding-left: 1rem; padding-right: 1rem;}
   h2 {margin-top:2rem;}
   p { margin-bottom: 2rem;}
+    a { text-decoration:none; color:$charcoal; }
   .border-h { margin-top: auto;}
 	@include breakpoint(min-sm){
 		width:32%;
@@ -139,13 +140,13 @@ article .attachment-post-thumbnail {
             }
           }
 
-/* placeholder styling */
 
+/* button styling */
 
 
 .readmore-btn {
     background-color: #E4541B;
-    color: white;
+    color: white !important;
     border-radius: 5px;
     padding: 8px;
     padding-left: 20px;
@@ -158,6 +159,9 @@ article .attachment-post-thumbnail {
 .readmore-btn:hover {
     background-color: #333333;
   }
+
+/* END of button styling */
+
 
 
 /* what is moneyAware styling */
