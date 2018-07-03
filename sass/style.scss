@@ -16,14 +16,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @import "_variables.scss";
 @import "reset.scss";
-@import "mixins.scss";
+@import "modules/_mixins.scss";
 @import "modules/_navigation.scss";
 @import "modules/_articles.scss";
 @import "modules/_60seconds.scss";
 @import "modules/_blogposts.scss";
 @import "modules/_sidebar.scss";
 @import "modules/_search.scss";
-
 
 * {
     &,
@@ -96,6 +95,24 @@ p { margin-bottom:1rem; }
 .cat1593 { border-color:$cat3;}
 .cat1594 { border-color:$cat4; }
 .cat1595 { border-color:$cat5; }
+
+
+.page--cat .post:first-child {
+	width:100%;
+  h2 {margin-top:0;}
+	.wp-post-image { display:none; }
+}
+
+.article, .page--cat .post:first-child {
+	position:relative;
+	z-index:2;
+	padding:2rem;
+	border:1px solid $border;
+	@include breakpoint(min-sm){
+		padding:50px 100px;
+		margin-top:-60px;
+	}
+}
 
 $bgcolors: (
   white:$white
