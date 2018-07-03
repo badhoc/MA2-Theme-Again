@@ -519,13 +519,9 @@ function new_author_posts_link() {
 
 function sixtySecondDiv() {
 	return '<div class="dr-tool">
-    
             <p class="DR-text">Worried about money?<br>Take the 60 second debt test
             </p>
-            
-            <button class="DR-button">Take the test now
-            </button>
-        
+            <div class="DR-button"><a id="DR-btn" href="/worried-about-money">Take the test now</a></div>
         </div>';
 }
 
