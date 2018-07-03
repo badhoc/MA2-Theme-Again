@@ -68,7 +68,44 @@ article .attachment-post-thumbnail {
   }
 }
 
-.post:first-child {
+.page--cat .post {
+	width:100%;
+	background:$white;
+	display:inline-block;
+  margin-bottom: 1rem;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+	a { text-decoration:none; color:$charcoal; }
+  p, h2 {padding-left: 1rem; padding-right: 1rem;}
+  h2 {margin-top:2rem;}
+  p { margin-bottom: 2rem;}
+  .border-h { margin-top: auto;}
+	@include breakpoint(min-sm){
+		width:32%;
+	}
+}
+
+.page--cat .post:first-child {
+	width:100%;
+  h2 {margin-top:0;}
+	.wp-post-image { display:none; }
+}
+
+.article, .page--cat .post:first-child {
+	position:relative;
+	z-index:2;
+	padding:2rem;
+	border:1px solid $border;
+	@include breakpoint(min-sm){
+		padding:50px 100px;
+		margin-top:-60px;
+	}
+}
+
+
+.post:first-child { /*removes the image on both the category and homepage first post */
   img {
     display:none;
   }

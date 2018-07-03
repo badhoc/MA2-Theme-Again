@@ -19,9 +19,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "modules/_mixins.scss";
 @import "modules/_navigation.scss";
 @import "modules/_articles.scss";
+@import "modules/_60seconds.scss";
 @import "modules/_blogposts.scss";
-
-
+@import "modules/_sidebar.scss";
+@import "modules/_search.scss";
 
 * {
     &,
@@ -94,8 +95,6 @@ p { margin-bottom:1rem; }
 .cat1593 { border-color:$cat3;}
 .cat1594 { border-color:$cat4; }
 .cat1595 { border-color:$cat5; }
-
-
 
 
 .page--cat .post:first-child {

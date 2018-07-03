@@ -26,7 +26,6 @@ get_header(); ?>
 				 */
 				get_template_part( 'loop', 'category' );
 				?>
-
 			</div><!-- #content -->
 		</div><!-- #container -->
 

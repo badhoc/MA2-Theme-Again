@@ -19,6 +19,14 @@
  */
 ?>
 
+<?php /* If on a category page or not the homepage change the number of posts shown from 7 to 6 */ ?>
+<?php if(!is_home()){
+    global $query_string;
+    parse_str( $query_string, $args );
+    $args['posts_per_page'] = 6;
+    query_posts($args);
+} ?>
+
 <main class="page page--cat">
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
@@ -50,13 +58,24 @@
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
-	 <?php if (!is_home()) { /* only display on categories not homepage */ ?>
+	 <?php if (!is_home())  { /* only display on categories not homepage or search */ ?>
 				<div class="page--cat post cat-desc">
-					<h1 class="border-v"><?php single_cat_title(); ?></h1>
+					<h1 class="border-v"><?php
+					if (is_search()) {
+						echo $wp_query->found_posts.' results found for: '.get_search_query();
+					}
+						single_cat_title();
+					?></h1>
 					<?php
+
 										$category_description = category_description();
+
 										if ( ! empty( $category_description ) )
 											echo $category_description;
+										if (is_search()) {
+											echo 'Not what you were looking for? Search again: ';
+											get_search_form();
+										}
 				 ?>
 
 				</div>
@@ -147,7 +166,7 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail(); ?>
 				<?php else :?>
-					<img src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
+					<img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
 				<?php endif; ?>
 
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -160,19 +179,13 @@
 					<a class="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
 				</p>
 
-		<!--		<?php $categories = get_the_category();
-				if (!empty($categories)) {
-					printf('<div class="border-h cat%1$s"></div>',esc_html( $categories[0]->term_id ));
-				}
-			?> -->
-
 		<!-- .entry-utility -->
 
 		</article><!-- #post-## -->
 
 
 	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
-<?php if ($counter == 3 && !is_home() || $counter == 4 && is_home())
+<?php if ($counter == 3 && !is_home() && !is_search() || $counter == 4 && is_home() && !is_search())
 {
 echo "<div class='moneyawareBlurb'>
 			<div class='blurb'>
@@ -181,14 +194,14 @@ echo "<div class='moneyawareBlurb'>
 			</div>
 			<div class='sixtySecond-category'>
 			<p>Worried about money?<br>Take the 60 second debt test</p>
-			<a href='#''>take the test</a></div>
+			<a href='worried-about-money'>take the test</a></div>
 			</div>";
 		}
 ?>
 <?php endwhile; // End the loop. Whew. ?>
-https://code.tutsplus.com/tutorials/how-to-create-infinite-scroll-pagination--wp-24873
-
-
+<?php
+if (  $wp_query->max_num_pages > 1 )
+ echo '<div class="loadMorePosts">Load More Posts (not working yet)</div>';
+ ?>
 </section>
-
 </main>
