@@ -11,7 +11,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php /* bloginfo('template_directory'); */?>/style.css" /> -->
 <link rel="stylesheet" type="text/css" media="all" href="http://TRAINING10/wordpress/wp-content/themes/MA2-Theme-Again/style.css" />
 <meta name="twitter:site" content="@MoneyAware">
 <meta property="twitter:account_id" content="1592145024" />

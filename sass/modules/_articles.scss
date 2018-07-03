@@ -141,24 +141,7 @@ article .attachment-post-thumbnail {
 
 /* placeholder styling */
 
-.page--cat .post {
-	width:100%;
-	background:$white;
-	display:inline-block;
-  margin-bottom: 1rem;
-  display: -ms-flex;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-	a { text-decoration:none; color:#333; }
-  p, h2 {padding-left: 1rem; padding-right: 1rem;}
-  h2 {margin-top:2rem;}
-  p { margin-bottom: 2rem;}
-  .border-h { margin-top: auto;}
-	@include breakpoint(min-sm){
-		width:32%;
-	}
-}
+
 
 .readmore-btn {
     background-color: #E4541B;
