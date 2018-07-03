@@ -1,0 +1,18 @@
+.searchform {
+  margin-top:1em;
+ input[type=submit]{
+   display:inline;
+   padding:0.5em;
+   margin-top:0.5em;
+   border-radius:$br1;
+   color:$white;
+   background-color:$hot-orange;
+   border-style:none;
+ }
+ input[type=text]{
+   padding:0.5em;
+   border-radius: $br1;
+   border: 1px dotted $charcoal;
+ }
+
+}

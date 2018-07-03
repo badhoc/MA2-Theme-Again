@@ -1,0 +1,34 @@
+.article {
+  display:flex;
+  flex-flow:column wrap;
+}
+
+
+.avatar {
+  border-radius: 100px;
+}
+
+#author-avatar {
+  display:inline-flex;
+}
+
+.cat-desc {
+  p {
+    margin-bottom:0!important;
+  }
+
+}
+
+.loadMorePosts {
+  background-color: $hot-orange;
+  color: $white;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem 0.5em;
+  cursor:pointer;
+  border-radius: $br1;
+  @media (min-width:$md) {
+    width:27%;
+  }
+}
