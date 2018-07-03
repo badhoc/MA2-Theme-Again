@@ -13,6 +13,7 @@ Text Domain: twentythirteen
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+/* border radius */
 @font-face {
   font-family: 'Corbel';
   src: url("/fonts/Corbel.eot");
@@ -21,7 +22,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   font-style: normal;
 }
 
-/* line 1, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 1, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 a,
 abbr,
 acronym,
@@ -104,7 +105,7 @@ video {
 }
 
 /* HTML5 display-role reset for older browsers */
-/* line 82, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 82, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 dd,
 dl,
 dt,
@@ -115,12 +116,12 @@ ul {
   line-height: 1.6em;
 }
 
-/* line 92, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 92, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 ul li {
   list-style: disc;
 }
 
-/* line 96, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 96, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 article,
 aside,
 details,
@@ -135,91 +136,91 @@ section {
   display: block;
 }
 
-/* line 110, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 110, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 body {
   line-height: 1;
 }
 
-/* line 114, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 114, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 120, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 120, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 blockquote:after, blockquote:before {
   content: '';
   content: none;
 }
 
-/* line 128, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 128, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 q:after, q:before {
   content: '';
   content: none;
 }
 
-/* line 135, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 135, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 140, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 140, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 li p {
   line-height: normal;
 }
 
-/* line 144, B:/GitHub/MA2-Theme-Again/sass/_reset.scss */
+/* line 144, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/_reset.scss */
 img {
   max-width: 100%;
 }
 
-/* line 1, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 1, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .page {
   max-width: 850px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 1, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 1, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .page {
     display: flex;
     justify-content: space-between;
   }
 }
 
-/* line 11, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 11, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .header-top {
   display: flex;
   justify-content: space-between;
   background-color: #FFF;
   position: fixed;
   width: 100%;
+  z-index: 3;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 11, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 11, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .header-top {
     position: relative;
-    z-index: 3;
     width: 25%;
   }
 }
 
-/* line 24, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 24, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .hide-it {
   display: none;
   transition: 0.2s;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 24, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 24, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .hide-it {
     display: block;
   }
 }
 
-/* line 33, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 33, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .header-logo {
   max-width: 66%;
   margin-left: 10px;
@@ -227,14 +228,14 @@ img {
 }
 
 @media screen and (min-width: 769px) {
-  /* line 33, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 33, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .header-logo {
     max-width: 100%;
     padding: 0;
   }
 }
 
-/* line 43, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 43, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .burger {
   cursor: pointer;
   width: 20%;
@@ -246,26 +247,26 @@ img {
 }
 
 @media screen and (min-width: 769px) {
-  /* line 43, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 43, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .burger {
     display: none;
   }
 }
 
-/* line 52, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 52, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .burger p {
   padding: 0;
   margin: auto;
   font-size: 0.8em;
 }
 
-/* line 60, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 60, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .burger-container {
   display: inline-block;
   margin: auto;
 }
 
-/* line 64, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 64, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .bar {
   width: 35px;
   height: 5px;
@@ -277,24 +278,24 @@ img {
 }
 
 /* rotate first bar */
-/* line 75, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 75, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .bar-change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-8px, 6px);
 }
 
-/* line 80, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 80, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .bar-change .bar2 {
   opacity: 0;
 }
 
-/* line 84, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 84, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .bar-change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-/* line 89, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 89, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .nav2 {
   background-color: white;
   position: fixed;
@@ -304,21 +305,21 @@ img {
 }
 
 @media screen and (min-width: 769px) {
-  /* line 89, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 89, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .nav2 {
     position: relative;
     margin-top: 0;
   }
 }
 
-/* line 101, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 101, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .menu {
   background-color: white;
   padding-left: 1%;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 101, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 101, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .menu {
     display: flex;
     align-items: flex-end;
@@ -326,19 +327,19 @@ img {
   }
 }
 
-/* line 109, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 109, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .menu ul {
   list-style: none;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 109, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 109, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .menu ul {
     margin: 0;
   }
 }
 
-/* line 115, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 115, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .menu li {
   list-style: none;
   margin-bottom: 5px;
@@ -347,7 +348,7 @@ img {
 }
 
 @media screen and (min-width: 769px) {
-  /* line 115, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 115, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .menu li {
     border-left: none;
     border-bottom: 5px solid blue;
@@ -358,57 +359,57 @@ img {
   }
 }
 
-/* line 128, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 128, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .menu li a {
   text-decoration: none;
   color: #333;
 }
 
-/* line 135, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 135, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .menu-nav-menu-container {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 135, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 135, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .menu-nav-menu-container {
     border: none;
   }
 }
 
-/* line 143, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 143, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 .current-menu-item {
   font-weight: 800;
 }
 
-/* line 147, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 147, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 #menu-item-7443 {
   border-color: #F08B1E;
 }
 
-/* line 150, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 150, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 #menu-item-7444 {
   border-color: #AFC82B;
 }
 
-/* line 153, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 153, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 #menu-item-7445 {
   border-color: #057EAB;
 }
 
-/* line 156, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 156, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 #menu-item-7446 {
   border-color: #Df4BDA;
 }
 
-/* line 159, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+/* line 159, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
 #menu-item-7447 {
   border-color: #6B3374;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 164, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 164, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .nav2 {
     flex-grow: 3;
     align-self: flex-end;
@@ -416,199 +417,120 @@ img {
     -webkit-margin-before: 0;
     margin: 0;
   }
-  /* line 171, B:/GitHub/MA2-Theme-Again/sass/modules/_navigation.scss */
+  /* line 171, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_navigation.scss */
   .logo {
     flex-grow: 1;
   }
 }
 
-/* line 62, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/* line 2, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.flex-container .post {
+  border-width: 0;
+  border-style: solid;
+  border-color: red;
+  border-left-width: 5px;
 }
 
-/* line 72, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-body {
-  background: #EEEEEE;
-  font-size: 16px;
-  line-height: 1.6rem;
-  font-family: arial;
-}
-
-/* line 79, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-main {
-  display: block;
-}
-
-/* line 80, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-a {
-  color: #6B3374;
-}
-
-@media (min-width: 48em) {
-  /* line 83, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-  .flex-container {
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+@media screen and (min-width: 769px) {
+  /* line 2, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+  .flex-container .post {
+    border-left-width: 0;
+    border-bottom-width: 5px;
   }
 }
 
-/* line 93, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.banner-image {
-  width: 100%;
-  height: 165px;
-  background: url(images/banner01.jpg) no-repeat;
-  background-size: cover;
+/* line 12, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.flex-container .category-making-money {
+  border-color: #F08B1E;
 }
 
-@media (min-width: 48em) {
-  /* line 93, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-  .banner-image {
-    height: 340px;
+/* line 16, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.flex-container .category-saving-money {
+  border-color: #AFC82B;
+}
+
+/* line 20, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.flex-container .category-living-with-debt {
+  border-color: #057EAB;
+}
+
+/* line 24, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.flex-container .category-debt-news {
+  border-color: #Df4BDA;
+}
+
+/* line 28, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.flex-container .category-budgeting {
+  border-color: #6B3374;
+}
+
+/* end of lex container */
+/* heading on blog posts */
+/* line 37, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-making-money h1 {
+  border-color: #F08B1E;
+}
+
+/* line 43, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-saving-money h1 {
+  border-color: #AFC82B;
+}
+
+/* line 49, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-living-with-debt h1 {
+  border-color: #057EAB;
+}
+
+/* line 55, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-debt-news h1 {
+  border-color: #Df4BDA;
+}
+
+/* line 60, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-budgeting h1 {
+  border-left: 3px solid #6B3374;
+}
+
+@media screen and (max-width: 769px) {
+  /* line 65, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+  article .attachment-post-thumbnail {
+    display: none;
   }
 }
 
-/* line 103, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.banner-image--4 {
-  background-image: url(images/banner02.jpg);
+/* line 72, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.post:first-child img {
+  display: none;
 }
 
-/* line 107, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-header .page {
-  position: relative;
+/* add the left border to the first post on the homepage */
+/* line 80, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-making-money.post:first-child h2 {
+  border-left: 3px solid #F08B1E;
 }
 
-/* line 108, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-header .logo img {
-  width: 200px;
-  padding: 10px 0 0;
+/* line 85, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-saving-money.post:first-child h2 {
+  border-left: 3px solid #AFC82B;
 }
 
-/* line 110, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-footer {
-  background: #FFF;
-  padding: 3rem 0;
-  font-size: 13px;
+/* line 90, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-living-with-debt.post:first-child h2 {
+  border-left: 3px solid #057EAB;
 }
 
-/* line 111, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-footer .disclaimer {
-  font-size: 11px;
-  line-height: 18px;
-  font-style: italic;
+/* line 95, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-debt-news.post:first-child h2 {
+  border-left: 3px solid #Df4BDA;
 }
 
-/* line 112, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-footer #site-generator {
-  margin-bottom: 1rem;
+/* line 100, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.category-budgeting.post:first-child h2 {
+  border-left: 3px solid #6B3374;
 }
 
-/* line 115, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
-}
-
-/* line 119, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header a {
-  color: #333;
-  text-decoration: none;
-  padding: 10px 5px;
-  border-bottom: 4px solid transparent;
-}
-
-/* line 125, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header a.cat4:hover, .nav--header a.cat4.active {
-  border-color: #F08B1E;
-}
-
-/* line 126, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header a.cat1592:hover, .nav--header a.cat1592.active {
-  border-color: #AFC82B;
-}
-
-/* line 127, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header a.cat1593:hover, .nav--header a.cat1593.active {
-  border-color: #057EAB;
-}
-
-/* line 128, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header a.cat1594:hover, .nav--header a.cat1594.active {
-  border-color: #Df4BDA;
-}
-
-/* line 129, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.nav--header a.cat1595:hover, .nav--header a.cat1595.active {
-  border-color: #6B3374;
-}
-
-/* line 134, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.border-v {
-  border-left: solid 3px;
-}
-
-/* line 135, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.border-h {
-  border-bottom: solid 3px;
-}
-
-/* line 137, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-h1, h2 {
-  font-family: 'Corbel';
-}
-
-/* line 141, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-h1 {
-  padding-left: 1rem;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  line-height: 2.6rem;
-}
-
-/* line 142, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-h2 {
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-/* line 144, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-p {
-  margin-bottom: 1rem;
-}
-
-/* line 146, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.cat4 {
-  border-color: #F08B1E;
-}
-
-/* line 147, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.cat1592 {
-  border-color: #AFC82B;
-}
-
-/* line 148, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.cat1593 {
-  border-color: #057EAB;
-}
-
-/* line 149, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.cat1594 {
-  border-color: #Df4BDA;
-}
-
-/* line 150, B:/GitHub/MA2-Theme-Again/sass/style.scss */
-.cat1595 {
-  border-color: #6B3374;
-}
-
-/* line 155, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* placeholder styling */
+/* line 107, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
 .page--cat .post {
   width: 100%;
   background: #FFF;
@@ -620,56 +542,298 @@ p {
   flex-direction: column;
 }
 
-/* line 164, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 116, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
 .page--cat .post a {
   text-decoration: none;
   color: #333;
 }
 
-/* line 165, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 117, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
 .page--cat .post p, .page--cat .post h2 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-/* line 166, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 118, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
 .page--cat .post h2 {
   margin-top: 2rem;
 }
 
-/* line 167, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 119, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
 .page--cat .post p {
   margin-bottom: 2rem;
 }
 
-/* line 168, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 120, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
 .page--cat .post .border-h {
   margin-top: auto;
 }
 
 @media (min-width: 48em) {
-  /* line 155, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+  /* line 107, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
   .page--cat .post {
     width: 32%;
   }
 }
 
-/* line 174, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 126, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.readmore-btn {
+  background-color: #E4541B;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: arial, sans-serif;
+  text-decoration: none;
+}
+
+/* line 138, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.readmore-btn:hover {
+  background-color: #333333;
+}
+
+/* what is moneyAware styling */
+/* line 145, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.moneyawareBlurb {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 769px) {
+  /* line 145, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+  .moneyawareBlurb {
+    flex-flow: row nowrap;
+  }
+}
+
+/* line 152, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.moneyawareBlurb .blurb {
+  background-color: #FFF;
+  width: 100%;
+  padding: 2em;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 769px) {
+  /* line 152, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+  .moneyawareBlurb .blurb {
+    width: 66%;
+  }
+}
+
+/* line 161, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.moneyawareBlurb .sixtySecond-category {
+  width: 100%;
+  background-color: #6B3374;
+  color: #FFF;
+  padding: 2em;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 769px) {
+  /* line 161, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+  .moneyawareBlurb .sixtySecond-category {
+    width: 32%;
+  }
+}
+
+/* line 170, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.moneyawareBlurb .sixtySecond-category p {
+  margin-bottom: 2em;
+}
+
+/* line 173, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_articles.scss */
+.moneyawareBlurb .sixtySecond-category a {
+  color: #FFF;
+  padding: 0.5em 2em;
+  border-radius: 6px;
+  border: 1px solid #FFF;
+  text-decoration: none;
+}
+
+/* end of money aware */
+/* line 1, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_blogposts.scss */
+.article {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+/* line 7, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_blogposts.scss */
+.avatar {
+  border-radius: 100px;
+}
+
+/* line 11, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_blogposts.scss */
+#author-avatar {
+  display: inline-flex;
+}
+
+/* line 16, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/modules/_blogposts.scss */
+.cat-desc p {
+  margin-bottom: 0 !important;
+}
+
+/* line 27, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 37, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+body {
+  background: #EEEEEE;
+  font-size: 16px;
+  line-height: 1.6rem;
+  font-family: arial;
+}
+
+/* line 44, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+main {
+  display: block;
+}
+
+/* line 45, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+a {
+  color: #6B3374;
+}
+
+@media (min-width: 48em) {
+  /* line 48, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+  .flex-container {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* line 58, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.banner-image {
+  width: 100%;
+  height: 165px;
+  background: url(images/banner01.jpg) no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 48em) {
+  /* line 58, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+  .banner-image {
+    height: 340px;
+  }
+}
+
+/* line 68, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.banner-image--4 {
+  background-image: url(images/banner02.jpg);
+}
+
+/* line 72, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+header .page {
+  position: relative;
+}
+
+/* line 73, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+header .logo img {
+  width: 200px;
+  padding: 10px 0 0;
+}
+
+/* line 75, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+footer {
+  background: #FFF;
+  padding: 3rem 0;
+  font-size: 13px;
+}
+
+/* line 76, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+footer .disclaimer {
+  font-size: 11px;
+  line-height: 18px;
+  font-style: italic;
+}
+
+/* line 77, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+footer #site-generator {
+  margin-bottom: 1rem;
+}
+
+/* line 80, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.border-v {
+  border-left: solid 3px;
+}
+
+/* .border-h { border-bottom:solid 3px; } */
+/* line 83, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+h1, h2 {
+  font-family: 'Corbel';
+}
+
+/* line 87, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+h1 {
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+/* line 88, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+/* line 90, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+p {
+  margin-bottom: 1rem;
+}
+
+/* line 92, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.cat4 {
+  border-color: #F08B1E;
+}
+
+/* line 93, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.cat1592 {
+  border-color: #AFC82B;
+}
+
+/* line 94, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.cat1593 {
+  border-color: #057EAB;
+}
+
+/* line 95, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.cat1594 {
+  border-color: #Df4BDA;
+}
+
+/* line 96, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
+.cat1595 {
+  border-color: #6B3374;
+}
+
+/* line 101, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .page--cat .post:first-child {
   width: 100%;
 }
 
-/* line 176, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 103, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .page--cat .post:first-child h2 {
   margin-top: 0;
 }
 
-/* line 177, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 104, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .page--cat .post:first-child .wp-post-image {
   display: none;
 }
 
-/* line 180, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 107, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .article, .page--cat .post:first-child {
   position: relative;
   z-index: 2;
@@ -678,19 +842,19 @@ p {
 }
 
 @media (min-width: 48em) {
-  /* line 180, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+  /* line 107, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
   .article, .page--cat .post:first-child {
     padding: 50px 100px;
     margin-top: -60px;
   }
 }
 
-/* line 196, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 123, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .u-bg--white {
   background: #FFF;
 }
 
-/* line 201, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 128, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .icon--facebook,
 .icon--twitter {
   display: inline-block;
@@ -700,35 +864,35 @@ p {
   background-size: 30px;
 }
 
-/* line 210, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 137, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .icon--facebook {
   background: url(images/facebook.png) no-repeat;
 }
 
-/* line 214, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 141, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .icon--twitter {
   background: url(images/twitter.png) no-repeat;
 }
 
-/* line 218, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 145, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .list-menu {
   list-style-type: none;
   padding: 0;
 }
 
-/* line 221, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 148, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .list-menu li {
   display: inline-block;
   margin-right: 1rem;
 }
 
-/* line 224, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 151, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .list-menu li a {
   color: #333;
   text-decoration: none;
 }
 
-/* line 225, B:/GitHub/MA2-Theme-Again/sass/style.scss */
+/* line 152, C:/MAMP/htdocs/wordpress/wp-content/themes/MA2-Theme-Again/sass/style.scss */
 .list-menu li a:hover {
   color: #6B3374;
   text-decoration: underline;
