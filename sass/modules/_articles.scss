@@ -29,8 +29,7 @@
     border-color: $cat5;
   }
 
-}
-/* end of lex container */
+} /* end of flex container */
 
 /* heading on blog posts */
 .category-making-money {
@@ -206,6 +205,7 @@ article .attachment-post-thumbnail {
     }
     p {
       margin-bottom:2em;
+      color:$white;
     }
     a {
       color:$white;
