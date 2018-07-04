@@ -23,6 +23,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "modules/_blogposts.scss";
 @import "modules/_sidebar.scss";
 @import "modules/_search.scss";
+@import "modules/_404.scss";
+@import "modules/_pages.scss";
 
 * {
     &,
@@ -153,4 +155,14 @@ $bgcolors: (
         text-decoration: underline;
       }}
   }
+}
+
+#container {
+  max-width:850px;
+  margin:0 auto;
+  @media screen and (min-width:$md) {
+    display:flex;
+    justify-content: space-between;
+  }
+
 }

@@ -13,7 +13,7 @@
 	</div><!-- #main -->
 
 	<footer role="contentinfo">
-		<div class="page">
+		<div class="footer-info">
 
 				<div id="colophon">
 
@@ -23,37 +23,13 @@
 						 */
 						get_sidebar( 'footer' );
 					?>
-
-				<!--	<div id="footer-nav">
-							<ul class="list-menu">
-								<li>
-									<a href="#link" class="icon--twitter">&nbsp;</a>
-								</li>
-								<li>
-										<a href="#link" class="icon--facebook">&nbsp;</a>
-								</li>
-								<li>
-									<a href="#">Home</a>
-								</li>
-								<li>
-									<a href="#">Privacy&Cookies</a>
-								</li>
-								<li>
-									<a href="#">About</a>
-								</li>
-								<li>
-									<a href="#">Contact</a>
-								</li>
-							</ul>
-					</div>
-				-->
-
 					<div id="site-generator">
 							<div class="footer-logo"></div>
 							<?php do_action( 'twentyten_credits' ); ?>
-							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'twentyten' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'twentyten' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'twentyten' ), 'WordPress' ); ?> <script type="text/javascript">
-							var theDate=new Date()
-							document.write(theDate.getFullYear())
+							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'twentyten' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'twentyten' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'twentyten' ), 'WordPress' ); ?>
+								<script type="text/javascript">
+								var theDate=new Date()
+								document.write(theDate.getFullYear())
 							</script></a>
 					</div><!-- #site-generator -->
 

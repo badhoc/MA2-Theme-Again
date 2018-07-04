@@ -1,3 +1,11 @@
+#sidebar-container {
+  background-color:white;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  max-width:850px;
+}
+
+
 .sidebar {
     li{
       list-style:none;
@@ -7,4 +15,9 @@
     }
     margin:0;
     padding:0.5em;
+    div {
+      @media (min-width: $md) {
+        display:inline-flex;
+      }
+    }
 }

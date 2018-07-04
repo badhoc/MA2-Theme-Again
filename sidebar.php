@@ -8,8 +8,9 @@
  */
 ?>
 
+<div id="sidebar-container">
 
-			<ul class="sidebar testing123">
+			<ul class="sidebar">
 
 <?php
 	/* When we call the dynamic_sidebar() function, it'll spit out
@@ -30,6 +31,7 @@
 
 		<?php endif; // end primary widget area ?>
 			</ul>
+</div>
 		</div><!-- #primary .widget-area -->
 
 
