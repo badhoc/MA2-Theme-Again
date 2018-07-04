@@ -66,10 +66,8 @@
 					}
 						single_cat_title();
 					?></h1>
-					<?php
-
+					<?php /*kick out a description or search details depending on which page we're on */
 										$category_description = category_description();
-
 										if ( ! empty( $category_description ) )
 											echo $category_description;
 										if (is_search()) {
@@ -89,10 +87,8 @@
 <?php /* How to display posts of the Gallery format. The gallery category is the old way. */ ?>
 
 	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'twentyten' ) ) ) : ?>
-		gallery
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-
 			<div class="entry-meta">
 				<?php twentyten_posted_on(); ?>
 			</div><!-- .entry-meta -->
@@ -162,21 +158,22 @@
 	<?php else : ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-
-				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail(); ?>
-				<?php else :?>
-					<img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" src="http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg" alt="alternative title" /> <!-- replace this with fallback image -->
-				<?php endif; ?>
-
+			<?php if ( has_post_thumbnail() ) : ?>
+      <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+				<?php /* the_post_thumbnail(); */ ?>
+      <?php else : ?>
+          <?php $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+      <?php endif ?>
+        <div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
+        </div>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
-
+        <div class="excerpt-limit">
 				<?php the_excerpt(); ?>
-
+      </div>
 				<p class="readMore">
-					<a class="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
+					<a id="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
 				</p>
 
 		<!-- .entry-utility -->
@@ -190,7 +187,7 @@
 echo "<div class='moneyawareBlurb'>
 			<div class='blurb'>
 				<h2>What is MoneyAware?</h2>
-				<p>MoneyAware is part of StepChange Debt Charity. We're dedicated to providing advice and tips for those managing on a tight budget, and highlighting newsworthy issues that affect those living with debt.</p>
+				<p>StepChange Debt Charity’s blog MoneyAware provides income-boosting, money-saving and budgeting tips to help you make the most of your money and keep debt stress at bay.</p>
 			</div>
 			<div class='sixtySecond-category'>
 			<p>Worried about money?<br>Take the 60 second debt test</p>

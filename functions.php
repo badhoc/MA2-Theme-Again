@@ -527,7 +527,7 @@ function sixtySecondDiv() {
 
 add_shortcode('sixtySecond','sixtySecondDiv');
 
-//Exclude pages from WordPress Search
+//Exclude pages from WordPress Search as they break the formatting
 if (!is_admin()) {
 	function our_search_filter($query) {
 		if ($query->is_search) {
@@ -536,4 +536,14 @@ if (!is_admin()) {
 		return $query;
 	}
 add_filter('pre_get_posts','our_search_filter');
+}
+
+// add the link title as the class to register_nav_menus
+
+add_filter( 'nav_menu_css_class', 'custom_add_item_label_as_class', 10, 3 );
+
+function custom_add_item_label_as_class( $classes, $item, $args ) {
+        $classes[] = 'menu-' . sanitize_title_with_dashes( $item->title );
+    return $classes;
+
 }

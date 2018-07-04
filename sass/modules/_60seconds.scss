@@ -1,11 +1,13 @@
 .dr-tool {
   background-color:$primary-purple;
-  color:$white;
   margin:0.25em;
   margin-bottom:1em;
   padding:1em;
   display:flex;
   flex-flow:column nowrap;
+  p {
+    color:$white;
+  }
   a {
     color:$white;
     text-decoration:none;

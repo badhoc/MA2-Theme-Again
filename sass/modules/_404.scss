@@ -1,0 +1,15 @@
+.not-found {
+  background-color: $white;
+  margin:auto;
+  padding:2em;
+  p {
+
+  }
+  h1 {
+    border-left: 3px solid $charcoal;
+  }
+  @media (min-width: $md){
+    padding:50px 100px;
+    margin-top:-60px;
+  }
+}

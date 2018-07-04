@@ -1,11 +1,10 @@
-.page {
+.pageheader {
 	max-width:850px;
 	margin:0 auto;
   @media screen and (min-width:$md) {
     display:flex;
     justify-content: space-between;
   }
-
 }
 
 .header-top {
@@ -144,21 +143,24 @@
   font-weight: 800;
 }
 
-#menu-item-7443 {
-  border-color: $cat1;
+#menu-nav-menu {
+	.menu-making-money {
+	  border-color: $cat1;
+	}
+	.menu-saving-money {
+	  border-color: $cat2;
+	}
+	.menu-living-with-debt {
+	  border-color: $cat3;
+	}
+	.menu-debt-news {
+	  border-color: $cat4;
+	}
+	.menu-budgeting {
+	  border-color: $cat5;
+	}
 }
-#menu-item-7444 {
-  border-color: $cat2;
-}
-#menu-item-7445 {
-  border-color: $cat3;
-}
-#menu-item-7446 {
-  border-color: $cat4;
-}
-#menu-item-7447 {
-  border-color: $cat5;
-}
+
 
 @media screen and (min-width: $md) {
   .nav2 {

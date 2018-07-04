@@ -1,15 +1,25 @@
-.article {
-  display:flex;
-  flex-flow:column wrap;
-}
-
-
+/* circle author image */
 .avatar {
   border-radius: 100px;
 }
 
 #author-avatar {
   display:inline-flex;
+}
+
+/* tags styling */
+
+.tag-links {
+  a {
+    margin:3px;
+    padding:5px;
+    background-color: $background;
+    border-radius: $br1;
+    line-height: 2.25em;
+    text-decoration: none;
+    word-break: keep-all;
+    text-transform: lowercase;
+  }
 }
 
 .cat-desc {
