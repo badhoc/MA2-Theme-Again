@@ -2,47 +2,6 @@
 /**
  * TwentyTen functions and definitions
  *
- * Sets up the theme and provides some helper functions. Some helper functions
- * are used in the theme as custom template tags. Others are attached to action and
- * filter hooks in WordPress to change core functionality.
- *
- * The first function, twentyten_setup(), sets up the theme by registering support
- * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
- *
- * When using a child theme (see http://codex.wordpress.org/Theme_Development and
- * http://codex.wordpress.org/Child_Themes), you can override certain functions
- * (those wrapped in a function_exists() call) by defining them first in your child theme's
- * functions.php file. The child theme's functions.php file is included before the parent
- * theme's file, so the child theme functions would be used.
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
- * to a filter or action hook. The hook can be removed by using remove_action() or
- * remove_filter() and you can attach your own function to the hook.
- *
- * We can remove the parent theme's hook only after it is attached, which means we need to
- * wait until setting up the child theme:
- *
- * <code>
- * add_action( 'after_setup_theme', 'my_child_theme_setup' );
- * function my_child_theme_setup() {
- *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
- *     remove_filter( 'excerpt_length', 'twentyten_excerpt_length' );
- *     ...
- * }
- * </code>
- *
- * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * Used to set the width of images and content. Should be equal to the width the theme
- * is designed for, generally via the style.css stylesheet.
  */
 if ( ! isset( $content_width ) )
 	$content_width = 640;
@@ -155,30 +114,6 @@ function twentyten_setup() {
 }
 endif;
 
-if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in twentyten_setup().
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_admin_header_style() {
-?>
-<style type="text/css">
-/* Shows the same border as on front end */
-#headimg {
-
-}
-/* If header-text was supported, you would style the text with these selectors:
-	#headimg #name { }
-	#headimg #desc { }
-*/
-</style>
-<?php
-}
-endif;
-
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -192,62 +127,6 @@ function twentyten_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'twentyten_page_menu_args' );
-
-/**
- * Sets the post excerpt length to 40 characters.
- *
- * To override this length in a child theme, remove the filter and add your own
- * function tied to the excerpt_length filter hook.
- *
- * @since Twenty Ten 1.0
- * @return int
- */
-function twentyten_excerpt_length( $length ) {
-	return 40;
-}
-add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
-
-
-/**
- * Returns a "Continue Reading" link for excerpts
- *
- * @since Twenty Ten 1.0
- * @return string "Continue Reading" link
- */
-function twentyten_continue_reading_link() {
-	return '';
-}
-
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyten_continue_reading_link().
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string An ellipsis
- */
-function twentyten_auto_excerpt_more( $more ) {
-	return ' &hellip;' . twentyten_continue_reading_link();
-}
-add_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
-
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string Excerpt with a pretty "Continue Reading" link
- */
-function twentyten_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= twentyten_continue_reading_link();
-	}
-	return $output;
-}
-add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.
@@ -464,8 +343,7 @@ if ( ! function_exists( 'twentyten_posted_in' ) ) :
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_posted_in() {
-	// Retrieves tag list of current post, separated by commas.
+function twentyten_posted_in() { // Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', '' );
 	if ( $tag_list ) {
 		$posted_in = __( '<span class="entry-utility-prep-tag-links">Tags</span> %1$s %2$s', 'twentyten' );
@@ -546,4 +424,21 @@ function custom_add_item_label_as_class( $classes, $item, $args ) {
         $classes[] = 'menu-' . sanitize_title_with_dashes( $item->title );
     return $classes;
 
+}
+
+//filter the excerpt to the length you want
+/*
+function becky_filter_excerpt() {
+			return 3;
+}
+add_filter('excerpt_length','becky_filter_excerpt'); */
+
+function custom_excerpt(){
+	$articlecontent ='nothing to display';
+	if (has_excerpt()){
+		$articlecontent = wp_trim_words(get_the_excerpt(), 20, "...");
+	} else {
+		$articlecontent = wp_trim_words(get_the_content(), 20, "...");
+	}
+	echo wpautop($articlecontent,0);
 }

@@ -12,12 +12,6 @@ get_header(); ?>
 		<div id="container">
 			<div id="content" role="main">
 
-				<h1 class="page-title tag-page-title"><?php
-					printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-				?></h1>
-<?php $description = tag_description();
-	echo($description);
- ?>
 <?php
 /* Run the loop for the tag archive to output the posts
  * If you want to overload this in a child theme then include a file
