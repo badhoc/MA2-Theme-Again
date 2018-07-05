@@ -1,18 +1,28 @@
 .searchform {
   margin-top:1em;
  input[type=submit]{
-   display:inline;
-   padding:0.5em;
-   margin-top:0.5em;
-   border-radius:$br1;
-   color:$white;
-   background-color:$hot-orange;
-   border-style:none;
+    display: inline;
+    height: 45px;
+    background-color: #E4541B;
+    color: #FFF;
+    padding: 8px 22px;
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+    margin-left: -0.5em;
+    
  }
  input[type=text]{
-   padding:0.5em;
-   border-radius: $br1;
-   border: 1px dotted $charcoal;
+    width: auto;
+    height: 45px;
+    vertical-align: top;
+    padding: 0.8rem;
+    border: solid 1px #AAA;
+     
  }
 
 }
