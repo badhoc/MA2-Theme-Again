@@ -110,16 +110,22 @@ article .attachment-post-thumbnail {
 
 /* get the read more buttons all the same height */
 .excerpt-limit {
-  height:10.5em;
   overflow:hidden;
-  :first-child {
-    height:8.5em;
+  p {
+    margin-bottom: 0;
   }
 }
 
 .post:first-child { /*removes the image on both the category and homepage first post */
   .post-img {
     display:none;
+  }
+}
+
+.post-img {
+  display:none;
+  @media (min-width:$md) {
+    display:inherit;
   }
 }
 
@@ -202,8 +208,6 @@ article .attachment-post-thumbnail {
         transition: background-color 0.25s;
       }
   }
-
-
 
 /* what is moneyAware styling */
 
