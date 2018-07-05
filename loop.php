@@ -178,7 +178,7 @@
 				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
 				</a>
         <div class="excerpt-limit">
-				<?php the_excerpt(); ?>
+				<?php custom_excerpt(); ?>
       </div>
 				<p class="readMore">
 					<a id="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read More</a>
