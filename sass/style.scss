@@ -80,11 +80,12 @@ footer {background: $white; padding: 3rem 0; font-size: 13px;
   #site-generator {margin-bottom: 1rem;}
 }
 
-.border-v { border-left:solid 3px; }
+.border-v { border-left:$charcoal solid 3px; }
 /* .border-h { border-bottom:solid 3px; } */
 
 h1, h2 {
 	font-family:'Corbel';
+  color: $charcoal;
 }
 
 h1 { padding-left:1rem; margin-bottom:2rem; font-size:2rem; line-height:2.6rem; }

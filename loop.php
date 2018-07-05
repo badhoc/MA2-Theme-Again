@@ -20,11 +20,16 @@
 ?>
 
 <?php /* If on a category page or not the homepage change the number of posts shown from 7 to 6 */ ?>
-<?php if(!is_home()){
+<?php if(!is_home() && !is_search() ){
     global $query_string;
     parse_str( $query_string, $args );
     $args['posts_per_page'] = 6;
     query_posts($args);
+} elseif (is_search() && !is_home() ){
+  global $query_string;
+  parse_str ($query_string, $args );
+  $args ['posts_per_page'] = 9;
+  query_posts($args);
 } ?>
 
 <main class="page page--cat">
@@ -58,13 +63,16 @@
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
-	 <?php if (!is_home())  { /* only display on categories not homepage or search */ ?>
+	 <?php if (!is_home()) { /* only display on categories not homepage or search */ ?>
 				<div class="page--cat post cat-desc">
 					<h1 class="border-v"><?php
 					if (is_search()) {
 						echo $wp_query->found_posts.' results found for: '.get_search_query();
 					}
-						single_cat_title();
+          if (is_tag()){
+            echo "Posts tagged with: ";
+          }
+          single_cat_title();
 					?></h1>
 					<?php /*kick out a description or search details depending on which page we're on */
 										$category_description = category_description();
@@ -161,7 +169,7 @@
 			<?php if ( has_post_thumbnail() ) : ?>
       <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 				<?php /* the_post_thumbnail(); */ ?>
-      <?php else : ?>
+      <?php else : ?> <!-- add in a loop to select the correct image from the array but create the array first -->
           <?php $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
       <?php endif ?>
         <div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
@@ -182,7 +190,7 @@
 
 
 	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
-<?php if ($counter == 3 && !is_home() && !is_search() || $counter == 4 && is_home() && !is_search())
+<?php if ($counter == 3 && !is_home() && !is_search() && !is_tag() || $counter == 4 && is_home() && !is_search()  && !is_tag())
 {
 echo "<div class='moneyawareBlurb'>
 			<div class='blurb'>
