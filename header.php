@@ -119,7 +119,10 @@ fjs.parentNode.insertBefore(js, fjs);
 
 	<div id="main"><?php
 	if (is_singular() ) {
-		echo '<div class="banner-image '."post".'"></div>';
+		$category = get_the_category();
+		$firstCategory = sanitize_title_with_dashes($category[0]->cat_name);
+		$postimg= strtolower($firstCategory."-img");
+		echo '<div class="banner-image '.$postimg.'"></div>';
 	}	elseif (is_archive() ){
 		$categories = get_the_category();
 		$catname = esc_html( $categories[0]->name );
