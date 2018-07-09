@@ -11,52 +11,93 @@
 .home-img {
   	background:url(images/homepage.jpg) no-repeat;
     background-size: cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position: center center;
+    }
 }
 
 .search-img {
   	background:url(images/search.jpg) no-repeat;
+    background-size:cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 .not-found-img {
   	background:url(images/404_not_found.jpg) no-repeat;
     background-size: cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 .contact-img {
   	background:url(images/contact.jpg) no-repeat;
     background-size: cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 .about-img {
   	background:url(images/about.jpg) no-repeat;
     background-size: cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 .making-money-img {
   	background:url(images/making_money.jpg) no-repeat;
     background-size: cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 
 .saving-money-img {
   	background:url(images/saving_money.jpg) no-repeat;
-    background-size: cover;
+    background-size:cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 
 .living-with-debt-img {
   	background:url(images/living_with_debt.jpg) no-repeat;
-    background-size: cover;
+    background-size:cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 
 .debt-news-img {
   	background:url(images/news.jpg) no-repeat;
-    background-size: cover;
+    background-size:cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }
 
 
 .budgeting-img {
   	background:url(images/budgeting.jpg) no-repeat;
-    background-size: cover;
+    background-size:cover;
+    background-position-y: 60px;
+    @media (min-width: $md) {
+      background-position:top;
+    }
 }

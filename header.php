@@ -118,7 +118,9 @@ fjs.parentNode.insertBefore(js, fjs);
 
 
 	<div id="main"><?php
-	if (is_category() ){
+	if (is_singular() ) {
+		echo '<div class="banner-image '."post".'"></div>';
+	}	elseif (is_archive() ){
 		$categories = get_the_category();
 		$catname = esc_html( $categories[0]->name );
 		$catimg = sanitize_title_with_dashes($catname)."-img";
@@ -134,7 +136,7 @@ fjs.parentNode.insertBefore(js, fjs);
 		$post_slug=$post->post_name."-img";
 		echo '<div class="banner-image '.$post_slug.'"></div>';
 	} else {
-		echo '<div class="banner-image">no image</div>'; //fallback image
+		echo '<div class="banner-image"></div>'; //fallback image
 	}
 
 
