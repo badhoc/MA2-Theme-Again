@@ -8,11 +8,13 @@
    color:$white;
    background-color:$hot-orange;
    border-style:none;
+   font-size: 1em;
  }
  input[type=text]{
    padding:0.5em;
    border-radius: $br1;
    border: 1px dotted $charcoal;
+   font-size: 1em;
  }
 
 }

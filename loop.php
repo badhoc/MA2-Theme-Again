@@ -175,7 +175,7 @@
         <div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
         </div>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				<h2 class="entry-title border-bottom"><?php the_title(); ?></h2>
+				<h2 class="entry-title"><?php the_title(); ?></h2>
 				</a>
         <div class="excerpt-limit">
 				<?php custom_excerpt(); ?>
