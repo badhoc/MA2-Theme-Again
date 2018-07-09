@@ -14,10 +14,11 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import "_variables.scss";
 @import "reset.scss";
+@import "_variables.scss";
 @import "modules/_mixins.scss";
 @import "modules/_navigation.scss";
+@import "modules/_banner-imgs.scss";
 @import "modules/_articles.scss";
 @import "modules/_60seconds.scss";
 @import "modules/_blogposts.scss";
@@ -58,15 +59,7 @@ a { color:$primary-purple; }
   }
 }
 
-.banner-image {
-	width:100%;
-	height:165px;
-	background:url(images/banner01.jpg) no-repeat;
-	background-size: cover;
-	@include breakpoint(min-sm){
-		height:340px;
-	}
-}
+
 
 .banner-image--4 {
 	background-image:url(images/banner02.jpg);

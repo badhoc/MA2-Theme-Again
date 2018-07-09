@@ -1,0 +1,62 @@
+.banner-image {
+	width:100%;
+	height:165px;
+  background:url(images/homepage.jpg) no-repeat;
+	background-size: cover;
+	@include breakpoint(min-sm){
+		height:340px;
+	}
+}
+
+.home-img {
+  	background:url(images/homepage.jpg) no-repeat;
+    background-size: cover;
+}
+
+.search-img {
+  	background:url(images/search.jpg) no-repeat;
+}
+
+.not-found-img {
+  	background:url(images/404_not_found.jpg) no-repeat;
+    background-size: cover;
+}
+
+.contact-img {
+  	background:url(images/contact.jpg) no-repeat;
+    background-size: cover;
+}
+
+.about-img {
+  	background:url(images/about.jpg) no-repeat;
+    background-size: cover;
+}
+
+.making-money-img {
+  	background:url(images/making_money.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.saving-money-img {
+  	background:url(images/saving_money.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.living-with-debt-img {
+  	background:url(images/living_with_debt.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.debt-news-img {
+  	background:url(images/news.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.budgeting-img {
+  	background:url(images/budgeting.jpg) no-repeat;
+    background-size: cover;
+}

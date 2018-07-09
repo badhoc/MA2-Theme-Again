@@ -118,12 +118,24 @@ fjs.parentNode.insertBefore(js, fjs);
 
 
 	<div id="main"><?php
-	$categories = get_the_category();
-	if (!empty($categories)) {
-		 printf( '<div class="banner-image banner-image--%1$s"></div>',
-			esc_html( $categories[0]->term_id )
-		);
+	if (is_category() ){
+		$categories = get_the_category();
+		$catname = esc_html( $categories[0]->name );
+		$catimg = sanitize_title_with_dashes($catname)."-img";
+		echo '<div class="banner-image '.$catimg.'"></div>';
+	} elseif (is_home()) {
+		echo '<div class="banner-image home-img"></div>';
+	} elseif (is_search()) {
+		echo '<div class="banner-image search-img"></div>';
+	} elseif (is_404() ) {
+		echo '<div class="banner-image not-found-img"></div>';
+	} elseif (is_singular()) {
+		global $post;
+		$post_slug=$post->post_name."-img";
+		echo '<div class="banner-image '.$post_slug.'"></div>';
 	} else {
-		echo "<div class=\"banner-image\"></div>";
+		echo '<div class="banner-image">no image</div>'; //fallback image
 	}
+
+
 	?>
