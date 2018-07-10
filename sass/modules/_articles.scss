@@ -1,5 +1,5 @@
 .flex-container {
-  .post {
+  .type-post {
     border-width:0;
     border-style:solid;
     border-color:red;
@@ -67,7 +67,7 @@ article .attachment-post-thumbnail {
   }
 }
 
-.page--cat .post {
+.page--cat .post, .page--cat .type-post{
 	width:100%;
 	background:$white;
 	display:inline-block;
@@ -89,7 +89,10 @@ article .attachment-post-thumbnail {
 
 .page--cat .post:first-child {
 	width:100%;
-  h2 {margin-top:0;}
+  h2 {
+    margin-top:0;
+    border-left: 3px solid;
+  }
 	.wp-post-image { display:none; }
 }
 
@@ -125,7 +128,18 @@ article .attachment-post-thumbnail {
 .post-img {
   display:none;
   @media (min-width:$md) {
-    display:inherit;
+    display:flex;
+    justify-content: flex-end;
+  }
+  .popular {
+    background-color:$primary-purple;
+    color:white;
+    margin-top: 1.5em;
+    height: 13%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1em;
+    letter-spacing: 1px;
   }
 }
 
@@ -135,7 +149,7 @@ article .attachment-post-thumbnail {
   >h1 {
     border-left: 3px solid $cat1;
   }
-  >.post:first-child {
+  .post:first-child {
         h2 {
         border-left: 3px solid $cat1;
       }
@@ -146,7 +160,7 @@ article .attachment-post-thumbnail {
   >h1 {
     border-left: 3px solid $cat2;
   }
-  >.post:first-child {
+  .post:first-child {
         h2 {
         border-left: 3px solid $cat2;
       }
@@ -157,7 +171,7 @@ article .attachment-post-thumbnail {
   >h1 {
     border-left: 3px solid $cat3;
   }
-  >.post:first-child {
+  .post:first-child {
         h2 {
         border-left: 3px solid $cat3;
       }
@@ -168,7 +182,7 @@ article .attachment-post-thumbnail {
     >h1 {
       border-left: 3px solid $cat4;
     }
-    >.post:first-child {
+    .post:first-child {
           h2 {
           border-left: 3px solid $cat4;
         }
@@ -179,7 +193,7 @@ article .attachment-post-thumbnail {
   >h1 {
     border-left: 3px solid $cat5;
   }
-  >.post:first-child {
+  .post:first-child {
         h2 {
         border-left: 3px solid $cat5;
       }
@@ -188,11 +202,11 @@ article .attachment-post-thumbnail {
 
 /* placeholder styling */
 
-.post .readMore {
+ .readMore {
   #readmore-btn {
       background-color: $hot-orange;
       color: $white;
-      border-radius: 5px;
+      border-radius: $br1;
       padding: 8px;
       padding-left: 20px;
       padding-right: 20px;

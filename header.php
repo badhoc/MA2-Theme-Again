@@ -85,7 +85,12 @@ fjs.parentNode.insertBefore(js, fjs);
 		<div class="header-top">
 		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
 <!-- old menu design was in here -->
+<div id="access" role="navigation">
+	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+</div>
 
+<!-- new menu starts here -->
 	<div class="burger">
 		<div class="burger-container">
 		  <div class="bar bar1"></div>
@@ -109,38 +114,30 @@ fjs.parentNode.insertBefore(js, fjs);
 <div id="wrapper" class="hfeed">
 
 
-
-     <!--   <div id="access" role="navigation">
-          <?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-            <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-        </div> -->
-
-
-
+<!-- change the banner image based on which page you're on -->
 	<div id="main"><?php
-	if (is_singular() ) {
-		$category = get_the_category();
-		$firstCategory = sanitize_title_with_dashes($category[0]->cat_name);
-		$postimg= strtolower($firstCategory."-img");
-		echo '<div class="banner-image '.$postimg.'"></div>';
-	}	elseif (is_archive() ){
+	if (is_home()) { //homepage
+		echo '<div class="banner-image home-img"></div>';
+	} elseif (is_search()) { //search
+		echo '<div class="banner-image search-img"></div>';
+	} elseif (is_404() ) { //404 page
+		echo '<div class="banner-image not-found-img"></div>';
+	} elseif (is_singular()) { //odd pages out
+		global $post;
+		$post_slug=$post->post_name."-img";
+		echo '<div class="banner-image '.$post_slug.'"></div>';
+	} elseif (is_archive() ){ //for categories
 		$categories = get_the_category();
 		$catname = esc_html( $categories[0]->name );
 		$catimg = sanitize_title_with_dashes($catname)."-img";
 		echo '<div class="banner-image '.$catimg.'"></div>';
-	} elseif (is_home()) {
-		echo '<div class="banner-image home-img"></div>';
-	} elseif (is_search()) {
-		echo '<div class="banner-image search-img"></div>';
-	} elseif (is_404() ) {
-		echo '<div class="banner-image not-found-img"></div>';
-	} elseif (is_singular()) {
-		global $post;
-		$post_slug=$post->post_name."-img";
-		echo '<div class="banner-image '.$post_slug.'"></div>';
-	} else {
+	} elseif (is_singular() ) { //for single blog posts
+		$category = get_the_category();
+		$firstCategory = sanitize_title_with_dashes($category[0]->cat_name);
+		$postimg= strtolower($firstCategory."-img");
+		echo '<div class="banner-image '.$postimg.'"></div>';
+	}	 else {
 		echo '<div class="banner-image"></div>'; //fallback image
 	}
 
-
-	?>
+?>
