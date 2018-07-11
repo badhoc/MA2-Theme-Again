@@ -86,7 +86,12 @@ fjs.parentNode.insertBefore(js, fjs);
 		<div class="header-top">
 		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
 <!-- old menu design was in here -->
+<div id="access" role="navigation">
+	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+</div>
 
+<!-- new menu starts here -->
 	<div class="burger">
 		<div class="burger-container">
 		  <div class="bar bar1"></div>
@@ -96,35 +101,38 @@ fjs.parentNode.insertBefore(js, fjs);
 	<!--	<p class="menuLabel">Menu</p> -->
 	</div>
 </div>
-
-<nav class="nav2 hide-it" role="navigation">
-	<?php wp_nav_menu( array(
-		'menu' => 'Nav Menu'
-	)); ?>
-</nav>
+		<nav class="nav2 hide-it" role="navigation">
+			<?php wp_nav_menu( array(
+				'menu' => 'Nav Menu'
+			)); ?>
+		</nav>
 	</div>
-
 </header>
 
 
 <div id="wrapper" class="hfeed">
 
 
-
-     <!--   <div id="access" role="navigation">
-          <?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-            <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-        </div> -->
-
-
-
+<!-- change the banner image based on which page you're on -->
 	<div id="main"><?php
-	$categories = get_the_category();
-	if (!empty($categories)) {
-		 printf( '<div class="banner-image banner-image--%1$s"></div>',
-			esc_html( $categories[0]->term_id )
-		);
-	} else {
-		echo "<div class=\"banner-image\"></div>";
+		$imageClass = '';
+	if (is_home()) { //homepage
+			$imageClass = 'home-img';
+	} elseif (is_search()) { //search
+			$imageClass = 'search-img';
+	} elseif (is_404() ) { //404 page
+			$imageClass = 'not-found-img';
+	} elseif (is_page()) { //odd pages out
+			global $post;
+			$imageClass=$post->post_name."-img";
+	} elseif (is_archive() ){ //for categories
+			$categories = get_the_category();
+			$catname = esc_html( $categories[0]->name );
+			$imageClass = sanitize_title_with_dashes($catname)."-img";
+	} elseif (is_singular() ) {
+		$category = get_the_category();
+		$firstCategory = sanitize_title_with_dashes($category[0]->cat_name);
+		$imageClass= strtolower($firstCategory."-img");
 	}
-	?>
+		echo '<div class="banner-image '.$imageClass.'"></div>'
+?>

@@ -27,10 +27,7 @@
 							<div class="footer-logo"></div>
 							<?php do_action( 'twentyten_credits' ); ?>
 							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'twentyten' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'twentyten' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'twentyten' ), 'WordPress' ); ?>
-								<script type="text/javascript">
-								var theDate=new Date()
-								document.write(theDate.getFullYear())
-							</script></a>
+								<?php echo date("Y"); ?></a>
 					</div><!-- #site-generator -->
 
 				</div><!-- #colophon -->
