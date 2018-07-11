@@ -94,6 +94,7 @@ article .attachment-post-thumbnail {
     border-left: 3px solid;
   }
 	.wp-post-image { display:none; }
+
 }
 
 .article, .page--cat .post:first-child {
@@ -193,12 +194,13 @@ article .attachment-post-thumbnail {
   >h1 {
     border-left: 3px solid $cat5;
   }
-  .post:first-child {
-        h2 {
-        border-left: 3px solid $cat5;
-      }
-    }
 }
+
+.category-budgeting.post:first-child {
+      h2 {
+      border-color:$cat5;
+    }
+  }
 
 /* placeholder styling */
 

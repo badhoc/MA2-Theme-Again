@@ -18,13 +18,9 @@ jQuery(function($){
 			success : function( data ){
 				if( data ) {
 					button.text( 'Load more posts' ).before(data); // insert new posts
-					misha_loadmore_params.current_page++;
-
+					my_loadmore_params.current_page++;
 					if ( my_loadmore_params.current_page == my_loadmore_params.max_page )
-						button.remove(); // if last page, remove the button
-
-					// you can also fire the "post-load" event here if you use a plugin that requires it
-					// $( document.body ).trigger( 'post-load' );
+					button.remove(); // if last page, remove the button
 				} else {
 					button.remove(); // if no data, remove the button as well
 				}

@@ -509,12 +509,10 @@ function my_loadmore_ajax_handler(){
 			// for the test purposes comment the line above and uncomment the below one
 			//the_title();
 
-
-
 		endwhile;
-
 	endif;
 	die; // here we exit the script and even no wp_reset_query() required!
+
 }
 
 

@@ -1,5 +1,11 @@
 .type-page {
-  margin-top: -60px;
+  margin-top: 0;
   background-color: $white;
-  padding: 50px 100px;
+  padding: 2rem;
+  h1 {
+    border-left: 3px solid;
+  }
+  @media (min-width: $md){
+      margin-top: -60px;
+  }
 }

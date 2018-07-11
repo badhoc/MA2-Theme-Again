@@ -101,14 +101,12 @@ fjs.parentNode.insertBefore(js, fjs);
 	<!--	<p class="menuLabel">Menu</p> -->
 	</div>
 </div>
-
-<nav class="nav2 hide-it" role="navigation">
-	<?php wp_nav_menu( array(
-		'menu' => 'Nav Menu'
-	)); ?>
-</nav>
+		<nav class="nav2 hide-it" role="navigation">
+			<?php wp_nav_menu( array(
+				'menu' => 'Nav Menu'
+			)); ?>
+		</nav>
 	</div>
-
 </header>
 
 
@@ -117,28 +115,24 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- change the banner image based on which page you're on -->
 	<div id="main"><?php
+		$imageClass = '';
 	if (is_home()) { //homepage
-		echo '<div class="banner-image home-img"></div>';
+			$imageClass = 'home-img';
 	} elseif (is_search()) { //search
-		echo '<div class="banner-image search-img"></div>';
+			$imageClass = 'search-img';
 	} elseif (is_404() ) { //404 page
-		echo '<div class="banner-image not-found-img"></div>';
-	} elseif (is_singular()) { //odd pages out
-		global $post;
-		$post_slug=$post->post_name."-img";
-		echo '<div class="banner-image '.$post_slug.'"></div>';
+			$imageClass = 'not-found-img';
+	} elseif (is_page()) { //odd pages out
+			global $post;
+			$imageClass=$post->post_name."-img";
 	} elseif (is_archive() ){ //for categories
-		$categories = get_the_category();
-		$catname = esc_html( $categories[0]->name );
-		$catimg = sanitize_title_with_dashes($catname)."-img";
-		echo '<div class="banner-image '.$catimg.'"></div>';
-	} elseif (is_singular() ) { //for single blog posts
+			$categories = get_the_category();
+			$catname = esc_html( $categories[0]->name );
+			$imageClass = sanitize_title_with_dashes($catname)."-img";
+	} elseif (is_singular() ) {
 		$category = get_the_category();
 		$firstCategory = sanitize_title_with_dashes($category[0]->cat_name);
-		$postimg= strtolower($firstCategory."-img");
-		echo '<div class="banner-image '.$postimg.'"></div>';
-	}	 else {
-		echo '<div class="banner-image"></div>'; //fallback image
+		$imageClass= strtolower($firstCategory."-img");
 	}
-
+		echo '<div class="banner-image '.$imageClass.'"></div>'
 ?>
