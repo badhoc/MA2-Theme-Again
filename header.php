@@ -11,8 +11,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" /> -->
-<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" />
+<!--<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />-->
 <!--<link rel="stylesheet" type="text/css" media="all" href="https://TRAINING10/wordpress/wp-content/themes/MA2-Theme-Again/STYLE.CSS" /> -->
 <meta name="twitter:site" content="@MoneyAware">
 <meta property="twitter:account_id" content="1592145024" />
@@ -60,7 +60,7 @@
 	 */
 	wp_head();
 ?>
-<script type="text/JavaScript" async src="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/scripts.js"></script>
+<script type="text/JavaScript" async src="<?php  bloginfo('template_directory'); ?>/scripts.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -84,7 +84,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <header class="u-bg--white">
 	<div class="pageheader">
 		<div class="header-top">
-		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
+		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="<?php  bloginfo('template_directory'); ?>/images/money-aware-logo.png"></a>
 <!-- old menu design was in here -->
 <div id="access" role="navigation">
 	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>

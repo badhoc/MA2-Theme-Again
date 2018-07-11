@@ -448,13 +448,13 @@ function my_load_more_scripts() {
 	wp_enqueue_script('jquery');
 
 	// register our main script but do not enqueue it yet
-	wp_register_script( 'my_loadmore', 'http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/myloadmore.js', array('jquery') );
+	wp_register_script( 'my_loadmore', bloginfo('template_directory').'myloadmore.js', array('jquery') );
 
 	// now the most interesting part
 	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
 	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
 	wp_localize_script( 'my_loadmore', 'my_loadmore_params', array(
-		'ajaxurl' => 'http://mkt00587/wordpress/wp-admin/admin-ajax.php', // WordPress AJAX
+		'ajaxurl' => 'https://s19367.p20.sites.pressdns.com/wp/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages
@@ -486,10 +486,10 @@ function my_loadmore_ajax_handler(){
 			?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 				<?php if ( has_post_thumbnail() ) : ?>
 				<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-					<?php /* remove this line on live */ $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+					<?php /* remove this line on live */ $backgroundImg[0] = "https://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
 					<?php /* the_post_thumbnail(); */ ?>
 				<?php else : ?> <!-- add a fallback image incase there is no featured image -->
-						<?php $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+						<?php $backgroundImg[0] = "https://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
 				<?php endif ?>
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
 							<?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
