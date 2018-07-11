@@ -5,6 +5,8 @@
    padding:0.5em;
    margin-top:0.5em;
    border-radius:$br1;
+     border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
    color:$white;
    background-color:$hot-orange;
    border-style:none;
@@ -12,7 +14,10 @@
  input[type=text]{
    padding:0.5em;
    border-radius: $br1;
-   border: 1px dotted $charcoal;
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+   background-color: lightgrey;
+     border-style: none;
  }
 
 }
