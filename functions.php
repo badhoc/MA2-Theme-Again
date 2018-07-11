@@ -482,7 +482,7 @@ function my_loadmore_ajax_handler(){
 		while( have_posts() ): the_post();
 
 			/* bring in the same loop that we use for the normal archive */
-			
+
 			?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 				<?php if ( has_post_thumbnail() ) : ?>
 				<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
