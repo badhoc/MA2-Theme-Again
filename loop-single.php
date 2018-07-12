@@ -10,7 +10,7 @@
  * This can be overridden in child themes with loop-single.php.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.2
  */
 ?>
@@ -32,18 +32,18 @@
 					?>
 
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'moneyaware2' ), 'after' => '</div>' ) ); ?>
 				<!-- .entry-content -->
 
 <?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
 					<div>
 						<div id="author-avatar">
 							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 80 ) ); ?>
-							<p class="caption">posted by <?php the_author_posts_link(); ?>  <?php printf( __( '<span class="%1$s"> in</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+							<p class="caption">posted by <?php the_author_posts_link(); ?>  <?php printf( __( '<span class="%1$s"> in</span> %2$s', 'moneyaware2' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 						</br>
 							<?php
 									//the_date('M d');
-									echo '<div class="post_date">'.'<span>'.get_the_time('M').'</span>'.get_the_time('d').'</div>';
+									echo '<div class="post_date">'.'<span>'.get_the_time('d').' </span>'.get_the_time('M').'</div>';
 								?>
 							</p>
 						</div><!-- #author-avatar -->
@@ -56,7 +56,7 @@
 					<span class="tag-links post-links">
 						<?php twentyten_posted_in(); ?>
 					</span>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 

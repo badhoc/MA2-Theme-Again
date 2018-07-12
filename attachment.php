@@ -3,7 +3,7 @@
  * The template for displaying attachments.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 

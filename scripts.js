@@ -17,7 +17,7 @@ var menuLabel = document.querySelector('.menuLabel');
 
 burger.onclick = function(){
   burger.classList.toggle('bar-change');
-  menu.classList.toggle('hide-it')
+  menu.classList.toggle('hide-it');
   menuLabel.classList.toggle('hide-it');
 
 };

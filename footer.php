@@ -6,7 +6,7 @@
  * after. Calls sidebar-footer.php for bottom widgets.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 ?>
@@ -26,7 +26,7 @@
 					<div id="site-generator">
 							<div class="footer-logo"></div>
 							<?php do_action( 'twentyten_credits' ); ?>
-							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'twentyten' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'twentyten' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'twentyten' ), 'WordPress' ); ?>
+							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'moneyaware2' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'moneyaware2' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'moneyaware2' ), 'WordPress' ); ?>
 								<?php echo date("Y"); ?></a>
 					</div><!-- #site-generator -->
 
@@ -46,7 +46,7 @@
 	wp_footer();
 ?>
 
-<!-- <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/scripts.js?v=1"></script> -->
+<!-- <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/scripts.js?v=1"></script> -->
 
 
 <!-- START OF SmartSource Data Collector TAG -->

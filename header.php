@@ -5,13 +5,13 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" type="text/css" media="all" href="<?php  bloginfo('template_directory'); ?>/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 <!--<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />-->
 <!--<link rel="stylesheet" type="text/css" media="all" href="https://TRAINING10/wordpress/wp-content/themes/MA2-Theme-Again/STYLE.CSS" /> -->
 <meta name="twitter:site" content="@MoneyAware">
@@ -41,7 +41,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'moneyaware2' ), max( $paged, $page ) );
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -60,7 +60,7 @@
 	 */
 	wp_head();
 ?>
-<script type="text/JavaScript" async src="<?php  bloginfo('template_directory'); ?>/scripts.js"></script>
+<script type="text/JavaScript" async src="<?php echo get_template_directory_uri(); ?>/scripts.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -84,11 +84,11 @@ fjs.parentNode.insertBefore(js, fjs);
 <header class="u-bg--white">
 	<div class="pageheader">
 		<div class="header-top">
-		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="<?php  bloginfo('template_directory'); ?>/images/money-aware-logo.png"></a>
+		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="<?php echo get_template_directory_uri(); ?>/images/money-aware-logo.png"></a>
 <!-- old menu design was in here -->
 <div id="access" role="navigation">
 	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'moneyaware2' ); ?>"><?php _e( 'Skip to content', 'moneyaware2' ); ?></a></div>
 </div>
 
 <!-- new menu starts here -->

@@ -3,7 +3,7 @@
  * The Template for displaying all single posts.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 
@@ -20,7 +20,7 @@ get_header(); ?>
 			get_template_part( 'loop', 'single' );
 			?>
 
-			
+
 			</div><!-- #content -->
 		</div><!-- #container -->
 
