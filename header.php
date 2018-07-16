@@ -84,7 +84,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <header class="u-bg--white">
 	<div class="pageheader">
 		<div class="header-top">
-		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
+		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
 <!-- old menu design was in here -->
 <div id="access" role="navigation">
 	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>

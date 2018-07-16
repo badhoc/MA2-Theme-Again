@@ -428,9 +428,8 @@ function custom_add_item_label_as_class( $classes, $item, $args ) {
 
 /* create the custom excerpt length */
 
-function custom_excerpt(){
+function custom_excerpt($numberOfWords){
 	$articleContent ='nothing to display';
-	$numberOfWords = 20; //set the number of words
 	if (has_excerpt()){ //take the excerpt if it has it
 		$articleContent = wp_trim_words(get_the_excerpt(), $numberOfWords, "...");
 	} else { //if it doesnt take the content

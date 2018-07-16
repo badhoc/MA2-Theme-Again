@@ -1,3 +1,12 @@
+/*homepage styling */
+#hometitle {
+  border-left:3px solid $primary-purple;
+}
+
+#home-text {
+  margin-bottom: 0;
+}
+
 .flex-container {
   .type-post {
     border-width:0;
@@ -68,9 +77,11 @@ article .attachment-post-thumbnail {
 }
 
 .page--cat .post, .page--cat .type-post{
-	width:100%;
+	width:96%;
 	background:$white;
 	display:inline-block;
+  margin-left:auto;
+  margin-right:auto;
   margin-bottom: 1rem;
   display: -ms-flex;
   display: -webkit-flex;
@@ -101,7 +112,6 @@ article .attachment-post-thumbnail {
 	position:relative;
 	z-index:2;
 	padding:2rem;
-	border:1px solid $border;
 	@include breakpoint(min-sm){
 		padding:50px 100px;
 		margin-top:-60px;
@@ -132,16 +142,21 @@ article .attachment-post-thumbnail {
     display:flex;
     justify-content: flex-end;
   }
-  .popular {
-    background-color:$primary-purple;
-    color:white;
-    margin-top: 1.5em;
-    height: 13%;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1em;
-    letter-spacing: 1px;
+}
+
+.popular {
+  background-color:$primary-purple;
+  color:white;
+  margin-top: 0;
+  @media (min-width: $md){
+    margin-top:1.5em;
   }
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  position: absolute;
+  align-self: flex-end;
 }
 
 /* add the left border to the first post on the homepage and blog titles*/
@@ -202,8 +217,6 @@ article .attachment-post-thumbnail {
     }
   }
 
-/* placeholder styling */
-
  .readMore {
   #readmore-btn {
       background-color: $hot-orange;
@@ -228,33 +241,26 @@ article .attachment-post-thumbnail {
 /* what is moneyAware styling */
 
 .moneyawareBlurb {
-  display:flex;
-  flex-flow:column nowrap;
-  justify-content:space-between;
-  @media screen and (min-width:$md){
-    flex-flow:row nowrap;
-  }
-  .blurb {
-    background-color:$white;
-    width:100%;
-    padding:2em;
-    margin-bottom:1em;
-    @media screen and (min-width:$md){
-      width:66%;
-    }
-  }
+  width:99%;
+  margin:auto;
   .sixtySecond-category {
     width:100%;
+    display: flex;
+    flex-flow:column;
+    justify-content: space-between;
     background-color:$primary-purple;
     color:$white;
     padding:2em;
     margin-bottom:1em;
-    @media screen and (min-width:$md){
-      width:32%;
+    @media (min-width: $md){
+      flex-flow:row nowrap;
     }
     p {
-      margin-bottom:2em;
       color:$white;
+      @media (min-width:$md) {
+      line-height: 2.5em;
+      margin-bottom: 0;
+      }
     }
     a {
       color:$white;
@@ -262,6 +268,8 @@ article .attachment-post-thumbnail {
       border-radius:$br1;
       border:1px solid $white;
       text-decoration:none;
+      height:2.5em;
+      text-align:center;
       -webkit-transition: all 0.25s;
       transition: all 0.25s;
     }
@@ -274,3 +282,27 @@ article .attachment-post-thumbnail {
   }
 }
 /* end of money aware */
+
+/* load more posts */
+
+.loadMorePosts {
+  background-color: $hot-orange;
+  color: $white;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem 0.5em;
+  cursor:pointer;
+  border-radius: $br1;
+  -webkit-transition: all 0.25s;
+  transition: all .25s;
+  @media (min-width:$md) {
+    width:27%;
+  }
+}
+
+.loadMorePosts:hover {
+    background-color:$charcoal;
+    -webkit-transition: all 0.25s;
+    transition: all .25s;
+  }

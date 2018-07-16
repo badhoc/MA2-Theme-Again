@@ -1,7 +1,7 @@
 
 footer {
   background: $white;
-  padding: 3rem 0;
+  padding: 1rem 0;
   font-size: 13px;
 }
 
@@ -14,6 +14,8 @@ footer {
     #footer-widget-area {
       width:80%;
       display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
     }
   }
   .textwidget {
@@ -44,7 +46,8 @@ footer {
     align-self:center;
     text-align:center;
     font-size:1em;
-    a{
+    padding-right: 0.75em;
+    a {
     text-decoration:none;
     color:$charcoal;
   }
@@ -61,8 +64,18 @@ footer {
 }
 
 #site-generator {
+  max-width:100%;
+  @media (min-width:$md) {
+    max-width:20%
+  }
+  img {
 
-  padding-top:1em;
+  }
+}
+
+#footer-logo {
+  max-width:100%;
+  padding-top: 2.5em;
 }
 
 .disclaimer {
