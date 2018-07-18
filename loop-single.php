@@ -40,7 +40,7 @@
 						<div id="author-avatar">
 							<span id="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 80 ) ); ?></span>
 							<span id="author-text"><p class="caption">Posted by <?php the_author_posts_link(); ?>  <?php printf( __( '<span class="%1$s"> in</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
-							<?php /* the date */ echo '<div class="post_date">'.get_the_time('d')." ".get_the_time('M')." ".get_the_time('Y').'</div>';
+							<?php /* the date */ echo '<p class="post_date">'.get_the_time('d')." ".get_the_time('M')." ".get_the_time('Y').'</p>';
 								?>
 							</p></span>
 						</div><!-- #author-avatar -->

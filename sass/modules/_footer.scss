@@ -37,7 +37,10 @@ footer {
 }
 
 #menu-footer-links {
-  padding:0;
+  padding:0.5em;
+  @media (min-width: $md) {
+    padding:0;
+  }
   display:flex;
   flex-flow: row;
   justify-content: space-around;
@@ -47,10 +50,14 @@ footer {
     text-align:center;
     font-size:1em;
     padding-right: 0.75em;
+    line-height: 1em;
     a {
     text-decoration:none;
     color:$charcoal;
-  }
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }
 
