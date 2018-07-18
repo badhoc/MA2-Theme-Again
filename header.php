@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-Q2QFD');</script>
 <!-- End Google Tag Manager -->
-<script>(function(d, s, id) {
+<script type="text/plain" data-cookieconsent="preferences">(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
 js = d.createElement(s); js.id = id;
@@ -84,7 +84,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <header class="u-bg--white">
 	<div class="pageheader">
 		<div class="header-top">
-		<a class="logo" href="/wordpress" alt="MoneyAware logo" /><img class="header-logo" src="<?php echo get_template_directory_uri(); ?>/images/money-aware-logo.png"></a>
+		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" src="<?php echo get_template_directory_uri(); ?>/images/money-aware-logo.png"></a>
 <!-- old menu design was in here -->
 <div id="access" role="navigation">
 	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>

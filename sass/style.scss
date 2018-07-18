@@ -167,3 +167,14 @@ $bgcolors: (
   height:auto!important;
 }
 }
+
+/* add external link signifier */
+
+a:not( [href*='moneyaware.co.uk'] ):not( [href*='s19367.p20.sites.pressdns.com'] ):not( [href*='localhost'] ):not( [href^='#'] ):not( [href^='/'] ):after {
+ display:inline-block;
+ font-family: 'stepchange';
+ font-size: 0.8rem;
+ content: " \66";
+ vertical-align: super;
+white-space:pre;
+}
