@@ -1,7 +1,7 @@
 
 footer {
   background: $white;
-  padding: 3rem 0;
+  padding: 1rem 0;
   font-size: 13px;
 }
 
@@ -14,6 +14,8 @@ footer {
     #footer-widget-area {
       width:80%;
       display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
     }
   }
   .textwidget {
@@ -35,7 +37,10 @@ footer {
 }
 
 #menu-footer-links {
-  padding:0;
+  padding:0.5em;
+  @media (min-width: $md) {
+    padding:0;
+  }
   display:flex;
   flex-flow: row;
   justify-content: space-around;
@@ -44,10 +49,15 @@ footer {
     align-self:center;
     text-align:center;
     font-size:1em;
-    a{
+    padding-right: 0.75em;
+    line-height: 1em;
+    a {
     text-decoration:none;
     color:$charcoal;
-  }
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -61,8 +71,18 @@ footer {
 }
 
 #site-generator {
+  max-width:100%;
+  @media (min-width:$md) {
+    max-width:20%
+  }
+  img {
 
-  padding-top:1em;
+  }
+}
+
+#footer-logo {
+  max-width:100%;
+  padding-top: 2.5em;
 }
 
 .disclaimer {

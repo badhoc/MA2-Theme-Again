@@ -10,13 +10,14 @@
 .header-top {
 	display:flex;
 	justify-content: space-between;
-	background-color: $white;
+	background: linear-gradient(#fff 95%, #eee 100%);
 	position:fixed;
 	width:100%;
 	z-index: 3;
 	@media screen and (min-width:$md) {
 		position:relative;
 		width:25%;
+		background:none;
 	}
 }
 
@@ -90,16 +91,18 @@
 	position:fixed;
 	z-index: 3;
 	width:100%;
-	margin-top:65px;
+	margin-top:60px;
+	background: linear-gradient(#fff 95%, #eee 100%);
 	@media screen and (min-width: $md){
 		position:relative;
 		margin-top:0;
+		background: $white;
 	}
 }
 
 #menu-nav-menu {
     background-color:white;
-    padding-left:1%;
+    padding-left:2%;
     @media screen and (min-width: $md ) {
       display: flex;
       align-items: flex-end;
@@ -145,8 +148,6 @@
 }
 
 .menu-nav-menu-container {
-  border-top:1px solid $charcoal;
-  border-bottom:1px solid $charcoal;
   @media screen and (min-width: $md ) {
     border:none;
   }

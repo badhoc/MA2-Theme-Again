@@ -188,7 +188,19 @@ if(!is_home() && !is_search() ){
 
     ?>
 
+    <?php if (is_home() && $counter == 1){ ?>
+      <article id="homepage-info" class="post type-post" >
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <h1 id="hometitle">MoneyAware</h1>
+          </a>
+          <div id="home-text">
+                <p>StepChange Debt Charity’s blog MoneyAware provides income-boosting, money-saving and budgeting tips to help you make the most of your money and keep debt stress at bay.</p>
+          </div>
+        </article>
+    <?php } else {?>
+
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+      <?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
 			<?php if ( has_post_thumbnail() ) : ?>
       <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 				<?php /* the_post_thumbnail(); */ ?>
@@ -196,13 +208,13 @@ if(!is_home() && !is_search() ){
           <?php $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
       <?php endif ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
-            <?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
+
         </div></a>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				      <h2 class="entry-title"><?php the_title(); ?></h2>
 				</a>
         <div class="excerpt-limit">
-				      <?php custom_excerpt(); ?>
+				      <?php custom_excerpt(20); ?>
         </div>
 				<p class="readMore">
 					<a id="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read more</a>
@@ -213,16 +225,12 @@ if(!is_home() && !is_search() ){
 		</article><!-- #post-## -->
 
 
-	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
+	<?php } endif; // This was the if statement that broke the loop into three parts based on categories. ?>
 <?php if ($counter == 3 && !is_home() && !is_search() && !is_tag() || $counter == 4 && is_home() && !is_search()  && !is_tag())
 {
 echo "<div class='moneyawareBlurb'>
-			<div class='blurb'>
-				<h2>What is MoneyAware?</h2>
-				<p>StepChange Debt Charity&#39;s blog MoneyAware provides income-boosting, money-saving and budgeting tips to help you make the most of your money and keep debt stress at bay.</p>
-			</div>
 			<div class='sixtySecond-category'>
-			<p>Worried about money?<br>Take the 60-second debt test</p>
+			<p>Worried about money? Take the 60-second debt test</p>
 			<a href='worried-about-money'>Take the test</a></div>
 			</div>";
 		}
