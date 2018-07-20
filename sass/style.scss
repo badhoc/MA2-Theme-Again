@@ -61,10 +61,10 @@ a { color:$primary-purple; }
 }
 
 header .page { position:relative; }
-header .logo img { width: 200px; padding: 10px 0 0; }
+header .logo img { max-width: 200px; padding: 10px 0 0; }
 
 footer {
-  background: $white; padding: 3rem 0; font-size: 13px;
+  background: $white; padding: 1rem; font-size: 13px;
   .disclaimer {
     font-size: 11px; line-height: 18px; font-style: italic;
   }
@@ -170,12 +170,18 @@ $bgcolors: (
 }
 
 /* add external link signifier */
+/*
+#container {
+  a:not( [href*='moneyaware.co.uk'] ):not( [href*='s19367.p20.sites.pressdns.com'] ):not( [href*='localhost'] ):not( [href^='#'] ):not( [href^='/'] ):after {
+   display:inline-block;
+   font-family: 'stepchange';
+   font-size: 0.8rem;
+   content: " \66";
+   vertical-align: super;
+  white-space:pre;
+  }
+} */
 
-a:not( [href*='moneyaware.co.uk'] ):not( [href*='s19367.p20.sites.pressdns.com'] ):not( [href*='localhost'] ):not( [href^='#'] ):not( [href^='/'] ):after {
- display:inline-block;
- font-family: 'stepchange';
- font-size: 0.8rem;
- content: " \66";
- vertical-align: super;
-white-space:pre;
+.mb2 {
+  margin-bottom: 2em;
 }

@@ -326,7 +326,7 @@ function twentyten_posted_in() { // Retrieves tag list of current post, separate
 	// Prints the string, replacing the placeholders.
 	printf(
 		$posted_in,
-		get_the_category_list( ' ' ),
+		get_the_category_list( '' ),
 		$tag_list,
 		get_permalink(),
 		the_title_attribute( 'echo=0' )
