@@ -18,9 +18,9 @@
 				<div id="colophon">
 					<div id="social-icons">
 						<span class="social-links">
-							<a href="http://www.twitter.com/moneyaware" target="_blank" class="social-twitter"></a>
-							<a href="http://www.facebook.com/moneyaware" target="_blank" class="social-facebook"></a>
-							<a href="http://www.youtube.com/moneyaware" target="_blank" class="social-youtube"></a>
+							<a href="http://www.twitter.com/moneyaware" target="_blank" class="social social-twitter"></a>
+							<a href="http://www.facebook.com/moneyaware" target="_blank" class="social social-facebook"></a>
+							<a href="http://www.youtube.com/moneyaware" target="_blank" class="social social-youtube"></a>
 						</span>
 					</div>
 					<?php
@@ -34,14 +34,10 @@
 								<a class="logo" href="/" alt="MoneyAware logo" /><img id="footer-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
 							</div>
 							<?php do_action( 'twentyten_credits' ); ?>
-<<<<<<< HEAD
 							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'moneyaware2' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'moneyaware2' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'moneyaware2' ), 'WordPress' ); ?>
 								<?php echo date("Y"); ?></a>
-=======
->>>>>>> master
 					</div><!-- #site-generator -->
 					</div><!-- #colophon -->
-					<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'moneyaware2' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'moneyaware2' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'twentyten' ), 'WordPress' ); ?><?php echo date("Y"); ?></a>
 		    <p class="disclaimer">Foundation for Credit Counselling (trading as StepChange Debt Charity) is a company limited by guarantee registered in England and Wales (Company No: 2757055 ) and a charity registered in England and Wales (Registered Charity No: 1016630). Registered office: Wade House, Merrion Centre, Leeds, LS2 8NG. Consumer Credit Counselling Service (Scotland) trading as StepChange Debt Charity Scotland is a company limited by guarantee registered in Scotland (Company No: SC162719) and a charity registered in Scotland (Registered Charity No:SC024413). Registered office: 33 Bothwell Street, Glasgow G2 6NL. Authorised and regulated by the Financial Conduct Authority.</p>
 			</div>
 	</footer><!-- #footer -->
