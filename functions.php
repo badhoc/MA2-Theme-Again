@@ -47,11 +47,11 @@ function twentyten_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'twentyten', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'moneyaware2', get_template_directory() . '/languages' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'twentyten' ),
+		'primary' => __( 'Primary Navigation', 'moneyaware2' ),
 	) );
 
 	// This theme allows users to set a custom background.
@@ -62,36 +62,7 @@ function twentyten_setup() {
 
 	// The custom header business starts here.
 
-	$custom_header_support = array(
-		// The default image to use.
-		// The %s is a placeholder for the theme template directory URI.
-		'default-image' => get_template_directory_uri() . '/images/headers/woman-looking-right.jpg',
-		'default-image-string' => '/images/headers/woman-looking-right.jpg',
-		// The height and width of our custom header.
-		'width' => apply_filters( 'twentyten_header_image_width', 306 ),
-		'height' => apply_filters( 'twentyten_header_image_height', 151 ),
-		// Support flexible heights.
-		'uploads'       => true
-	);
-
-	add_theme_support( 'custom-header', $custom_header_support );
-
-	if ( ! function_exists( 'get_custom_header' ) ) {
-		// This is all for compatibility with versions of WordPress prior to 3.4.
-		define( 'HEADER_TEXTCOLOR', '' );
-		define( 'NO_HEADER_TEXT', true );
-		define( 'HEADER_IMAGE', $custom_header_support['default-image'] );
-		define( 'HEADER_IMAGE_STRING', $custom_header_support['default-image-string'] );
-		define( 'HEADER_IMAGE_WIDTH', $custom_header_support['width'] );
-		define( 'HEADER_IMAGE_HEIGHT', $custom_header_support['height'] );
-		add_custom_image_header( '', $custom_header_support['admin-head-callback'] );
-		add_custom_background();
-	}
-
-	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 940 pixels wide by 198 pixels tall.
-	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( $custom_header_support['width'], $custom_header_support['height'], true );
+//deleted as we hardcoded it
 
 	// ... and thus ends the custom header business.
 
@@ -101,13 +72,13 @@ function twentyten_setup() {
 			'url' => '%s/images/headers/woman-looking-right.jpg',
 			'thumbnail_url' => '%s/images/headers/woman-looking-right-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Woman looking right', 'StepChange' )
+			'description' => __( 'Woman looking right', 'moneyaware2' )
 		),
 		'hanoi' => array(
 			'url' => '%s/images/headers/hanoi.jpg',
 			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Hanoi Plant', 'twentyeleven' )
+			'description' => __( 'Hanoi Plant', 'moneyaware2' )
 			)
 
 	) );
@@ -176,18 +147,18 @@ function twentyten_comment( $comment, $args, $depth ) {
 		<div class="comment-bubble" id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '%s <span class="says">says:</span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+			<?php printf( __( '%s <span class="says">says:</span>', 'moneyaware2' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 		</div><!-- .comment-author .vcard -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
+			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'moneyaware2' ); ?></em>
 			<br />
 		<?php endif; ?>
 
 		<div class="comment-meta comment-date commentmetadata">
 			<?php
 				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?>
-				<?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
+				printf( __( '%1$s at %2$s', 'moneyaware2' ), get_comment_date(),  get_comment_time() ); ?>
+				<?php edit_comment_link( __( '(Edit)', 'moneyaware2' ), ' ' );
 			?>
 		</div><!-- .comment-meta .commentmetadata -->
 
@@ -204,7 +175,7 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php //_e( 'Pingback:', 'twentyten' ); ?> <?php //comment_author_link(); ?><?php //edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' ); ?></p>
+		<p><?php //_e( 'Pingback:', 'moneyaware2' ); ?> <?php //comment_author_link(); ?><?php //edit_comment_link( __( '(Edit)', 'moneyaware2' ), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
@@ -223,9 +194,9 @@ endif;
 function twentyten_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'twentyten' ),
+		'name' => __( 'Primary Widget Area', 'moneyaware2' ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'twentyten' ),
+		'description' => __( 'The primary widget area', 'moneyaware2' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -234,9 +205,9 @@ function twentyten_widgets_init() {
 
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', 'twentyten' ),
+		'name' => __( 'Secondary Widget Area', 'moneyaware2' ),
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'twentyten' ),
+		'description' => __( 'The secondary widget area', 'moneyaware2' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -245,9 +216,9 @@ function twentyten_widgets_init() {
 
 	// Area 3, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'twentyten' ),
+		'name' => __( 'First Footer Widget Area', 'moneyaware2' ),
 		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', 'twentyten' ),
+		'description' => __( 'The first footer widget area', 'moneyaware2' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -256,9 +227,9 @@ function twentyten_widgets_init() {
 
 	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'twentyten' ),
+		'name' => __( 'Second Footer Widget Area', 'moneyaware2' ),
 		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'twentyten' ),
+		'description' => __( 'The second footer widget area', 'moneyaware2' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -267,9 +238,9 @@ function twentyten_widgets_init() {
 
 	// Area 5, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'twentyten' ),
+		'name' => __( 'Third Footer Widget Area', 'moneyaware2' ),
 		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'twentyten' ),
+		'description' => __( 'The third footer widget area', 'moneyaware2' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -278,9 +249,9 @@ function twentyten_widgets_init() {
 
 	// Area 6, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'twentyten' ),
+		'name' => __( 'Fourth Footer Widget Area', 'moneyaware2' ),
 		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'twentyten' ),
+		'description' => __( 'The fourth footer widget area', 'moneyaware2' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -321,7 +292,7 @@ if ( ! function_exists( 'twentyten_posted_on' ) ) :
  * @since Twenty Ten 1.0
  */
 function twentyten_posted_on() {
-	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'twentyten' ),
+	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'moneyaware2' ),
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
 			get_permalink(),
@@ -330,7 +301,7 @@ function twentyten_posted_on() {
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'twentyten' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'moneyaware2' ), get_the_author() ) ),
 			get_the_author()
 		)
 	);
@@ -346,16 +317,16 @@ if ( ! function_exists( 'twentyten_posted_in' ) ) :
 function twentyten_posted_in() { // Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', '' );
 	if ( $tag_list ) {
-		$posted_in = __( '<span class="entry-utility-prep-tag-links">Tags</span> %1$s %2$s', 'twentyten' );
+		$posted_in = __( '<span class="entry-utility-prep-tag-links">Tags</span> %1$s %2$s', 'moneyaware2' );
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
+		$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'moneyaware2' );
 	} else {
-		$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
+		$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'moneyaware2' );
 	}
 	// Prints the string, replacing the placeholders.
 	printf(
 		$posted_in,
-		get_the_category_list( ' ' ),
+		get_the_category_list( '' ),
 		$tag_list,
 		get_permalink(),
 		the_title_attribute( 'echo=0' )
@@ -363,35 +334,6 @@ function twentyten_posted_in() { // Retrieves tag list of current post, separate
 }
 endif;
 
-
-//Function added 22/11/2013 to remove rel=author attributes from home page posts
-add_filter('the_author_posts_link', 'new_author_posts_link');
-
-function new_author_posts_link() {
-       if ( !empty( $deprecated ) )
-		_deprecated_argument( __FUNCTION__, '2.1' );
-
-	global $authordata;
-	if ( !is_object( $authordata ) )
-		return false;
-		if ( is_home() ) {
-    		$link = sprintf(
-				'<a href="%1$s" title="%2$s">%3$s</a>',
-				esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ),
-				esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
-				get_the_author()
-			);
-		} else {
-    		$link = sprintf(
-				'<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
-				esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ),
-				esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
-				get_the_author()
-			);
-	}
-
-	echo apply_filters( 'new_author_posts_link', $link );
-}
 
 //function added 22/6/18 to add in 60second debt test show_recent_comments_widget_style
 
@@ -447,13 +389,13 @@ function my_load_more_scripts() {
 	wp_enqueue_script('jquery');
 
 	// register our main script but do not enqueue it yet
-	wp_register_script( 'my_loadmore', 'http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/myloadmore.js', array('jquery') );
+	wp_register_script( 'my_loadmore', get_template_directory_uri().'/myloadmore.js', array('jquery') );
 
 	// now the most interesting part
 	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
 	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
 	wp_localize_script( 'my_loadmore', 'my_loadmore_params', array(
-		'ajaxurl' => 'http://mkt00587/wordpress/wp-admin/admin-ajax.php', // WordPress AJAX
+		'ajaxurl' => get_site_url().'/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
 		'max_page' => $wp_query->max_num_pages
@@ -485,10 +427,10 @@ function my_loadmore_ajax_handler(){
 			?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 				<?php if ( has_post_thumbnail() ) : ?>
 				<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-					<?php /* remove this line on live */ $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+					<?php /* remove this line on live */ $backgroundImg[0] = "https://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
 					<?php /* the_post_thumbnail(); */ ?>
 				<?php else : ?> <!-- add a fallback image incase there is no featured image -->
-						<?php $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+						<?php $backgroundImg[0] = "https://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
 				<?php endif ?>
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
 							<?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>

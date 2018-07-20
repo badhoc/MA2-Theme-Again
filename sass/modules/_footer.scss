@@ -10,7 +10,17 @@ footer {
   display:flex;
   flex-flow: column nowrap;
   @media (min-width:$md){
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
+    #footer-widget-area {
+      width:100%;
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top:2em;
+    }
+  }
+  @media (min-width:$lg){
+    flex-flow: row nowrap;
     #footer-widget-area {
       width:80%;
       display: inline-flex;
@@ -20,20 +30,55 @@ footer {
   }
   .textwidget {
     text-align: center;
-    .social-links {
-      margin:auto;
-    }
+  }
+}
+
+.widget_search {
+  #searchform {
+    margin:0;
+  }
+}
+
+/* social link */
+#social-icons {
+  margin:auto;
+  text-align:center;
+}
+
+.social-links {
+  @media (min-width: $lg){
+    display: inline-table;
+    margin-top: 1.5em;
   }
 }
 
 .social-twitter {
-
+  background: url(images/twitter.png);
+  padding: 10px 25px;
+  white-space: nowrap;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin:5px;
 }
 .social-facebook {
-
+  background: url(images/facebook.png);
+  padding: 10px 25px;
+  white-space: nowrap;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+    margin:5px;
 }
 .social-youtube {
-
+  background: url(images/youtube.png);
+  padding: 10px 25px;
+  white-space: nowrap;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin:5px;
+  margin-left: 9px;
 }
 
 #menu-footer-links {
@@ -72,16 +117,15 @@ footer {
 
 #site-generator {
   max-width:100%;
-  @media (min-width:$md) {
-    max-width:20%
-  }
-  img {
-
+    text-align: center;
+  @media (min-width:$lg) {
+    max-width:20%;
+    text-align:right;
   }
 }
 
 #footer-logo {
-  max-width:100%;
+  max-width:200px;
   padding-top: 2.5em;
 }
 

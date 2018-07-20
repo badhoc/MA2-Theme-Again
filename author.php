@@ -3,7 +3,7 @@
  * The template for displaying Author Archive pages.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 
@@ -24,7 +24,7 @@ get_header(); ?>
 		the_post();
 ?>
 
-				
+
 
 <?php
 // If a user has filled out their description, show a bio on their entries.

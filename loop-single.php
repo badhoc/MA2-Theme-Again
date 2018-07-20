@@ -10,7 +10,7 @@
  * This can be overridden in child themes with loop-single.php.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.2
  */
 ?>
@@ -32,14 +32,14 @@
 					?>
 
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'moneyaware2' ), 'after' => '</div>' ) ); ?>
 				<!-- .entry-content -->
 
 <?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
 					<div>
 						<div id="author-avatar">
 							<span id="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 80 ) ); ?></span>
-							<span id="author-text"><p class="caption">Posted by <?php the_author_posts_link(); ?>  <?php printf( __( '<span class="%1$s"> in</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+							<span id="author-text"><p class="caption">Posted by <?php the_author_posts_link(); ?>  <?php printf( __( '<span class="%1$s"> in</span> %2$s', 'moneyaware2' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 							<?php /* the date */ echo '<p class="post_date">'.get_the_time('d')." ".get_the_time('M')." ".get_the_time('Y').'</p>';
 								?>
 							</p></span>
@@ -97,7 +97,7 @@
 								}
 								$post = $orig_post;
 								wp_reset_query(); ?>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 
