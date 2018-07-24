@@ -52,7 +52,51 @@
 				</span>
 
 					<div class="entry-utility">
-						<?php get_template_part( 'related' ); ?>
+						<?php /* new related posts sutff */
+							$orig_post = $post;
+							global $post;
+							$tags = wp_get_post_tags($post->ID);
+								if ($tags) {
+									$tag_ids = array();
+									foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+									$args=array(
+										'tag__in' => $tag_ids,
+										'post__not_in' => array($post->ID),
+										'posts_per_page'=>3, // Number of related posts that will be shown.
+										'caller_get_posts'=>1
+									);
+									$my_query = new wp_query( $args );
+									if( $my_query->have_posts() ) {
+
+										echo '<div id="relatedposts"><h3>Related Posts</h3><div class="relatedcontent">';
+
+										while( $my_query->have_posts() ) {
+											$my_query->the_post(); ?>
+											<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+												<?php if ( has_post_thumbnail() ) : ?>
+									      <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+													<?php /* the_post_thumbnail(); */ ?>
+									      <?php else : ?> <!-- add a fallback image incase there is no featured image -->
+									          <?php $backgroundImg[0] = "http://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+									      <?php endif ?>
+									        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+														<div class="relatedpost-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
+									        </div></a>
+														<h3><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+														<div class="excerpt-limit">
+																	<?php custom_excerpt(12); ?>
+														</div>
+														<p class="readMore">
+															<a id="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read more</a>
+														</p>
+											</article>
+											<?
+										}
+										echo '</div></div>';
+									}
+								}
+								$post = $orig_post;
+								wp_reset_query(); ?>
 						<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->

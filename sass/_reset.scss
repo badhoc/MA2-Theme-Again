@@ -144,3 +144,10 @@ li p {
 img {
     max-width: 100%;
 }
+
+input[type='submit']
+{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}

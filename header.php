@@ -60,7 +60,6 @@
 	 */
 	wp_head();
 ?>
-<script type="text/JavaScript" async src="<?php echo get_template_directory_uri(); ?>/scripts.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
