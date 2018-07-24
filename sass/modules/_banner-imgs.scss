@@ -89,6 +89,7 @@
     background-position-y: 60px;
     @media (min-width: $md) {
       background-position:top;
+			background-position-x:-50px;
     }
 }
 

@@ -166,7 +166,11 @@ $bgcolors: (
   img {
   max-width:100%!important;
   height:auto!important;
-}
+  }
+div {
+  //max-width:100% !important;
+  //height:auto !important;
+  }
 }
 
 /* add external link signifier */
