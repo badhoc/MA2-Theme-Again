@@ -23,6 +23,14 @@
    color:$white;
    background-color:$hot-orange;
    margin-left: -5px;
+   cursor: pointer;
+   -webkit-transition: background-color 0.25s;
+   transition: background-color 0.25s;
+   &:hover{
+     background-color: $charcoal;
+     -webkit-transition: background-color 0.25s;
+     transition: background-color 0.25s;
+   }
  }
 
 }

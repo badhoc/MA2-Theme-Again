@@ -13,7 +13,6 @@
 document.addEventListener("DOMContentLoaded", function(event){
 var burger = document.querySelector('.burger-container');
 var menu = document.querySelector('.nav2');
-var menuLabel = document.querySelector('.menuLabel');
 
 burger.onclick = function(){
   burger.classList.toggle('bar-change');

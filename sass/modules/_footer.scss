@@ -9,6 +9,8 @@ footer {
   list-style: none;
   display:flex;
   flex-flow: column nowrap;
+  max-width: 1000px;
+    margin: auto;
   @media (min-width:$md){
     flex-flow: column nowrap;
     #footer-widget-area {
@@ -94,7 +96,7 @@ footer {
     align-self:center;
     text-align:center;
     font-size:1em;
-    padding-right: 0.75em;
+    padding-right: 0.5em;
     line-height: 1em;
     a {
     text-decoration:none;

@@ -11,8 +11,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-<!--<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />-->
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />-->
+<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />
 <!--<link rel="stylesheet" type="text/css" media="all" href="https://TRAINING10/wordpress/wp-content/themes/MA2-Theme-Again/STYLE.CSS" /> -->
 <meta name="twitter:site" content="@MoneyAware">
 <meta property="twitter:account_id" content="1592145024" />

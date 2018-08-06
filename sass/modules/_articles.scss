@@ -96,6 +96,8 @@ article .attachment-post-thumbnail {
   .border-h { margin-top: auto;}
 	@include breakpoint(min-sm){
 		width:32%;
+    margin-left: 0;
+    margin-right: 0;
 	}
 }
 
@@ -241,7 +243,6 @@ article .attachment-post-thumbnail {
   }
 
 /* what is moneyAware styling */
-
 .moneyawareBlurb {
   width:99%;
   margin:auto;
@@ -286,7 +287,6 @@ article .attachment-post-thumbnail {
 /* end of money aware */
 
 /* load more posts */
-
 .loadMorePosts {
   background-color: $hot-orange;
   color: $white;

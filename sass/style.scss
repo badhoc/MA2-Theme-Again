@@ -10,7 +10,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moneyaware2
 Tags: charity moneyaware stepchange
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 @import "reset.scss";
@@ -46,7 +45,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-main { display:block; }
+main { display:block;
+max-width:850px; }
 a { color:$primary-purple; }
 
 
@@ -101,23 +101,6 @@ $bgcolors: (
   }
 }
 
-.icon--facebook,
-.icon--twitter {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 30px;
-  height: 30px;
-  background-size: 30px;
-}
-
-.icon--facebook{
-  background: url(images/facebook.png) no-repeat;
-}
-
-.icon--twitter{
-  background: url(images/twitter.png) no-repeat;
-}
-
 .list-menu {
   list-style-type: none;
   padding: 0;
@@ -166,10 +149,8 @@ $bgcolors: (
   img {
   max-width:100%!important;
   height:auto!important;
-  }
-div {
-  //max-width:100% !important;
-  //height:auto !important;
+  float:left;
+  margin:10px;
   }
 }
 
@@ -184,8 +165,31 @@ div {
    vertical-align: super;
   white-space:pre;
   }
-} */
+}
+*/
 
 .mb2 {
   margin-bottom: 2em;
+}
+
+
+/* taken from brand guidelines */
+table {
+  width:100%;
+  font-size:1rem;
+  margin-top:1.4rem;
+  margin-bottom: 1.4rem;
+  th {
+    font-weight: bold;
+    border-bottom:2px solid $cool-orange;
+    background:$background;
+  }
+  tr:nth-child(even) {
+    background:$background;
+  }
+  td {
+    text-align:left;
+    padding: 1.4rem 1rem;
+    border-bottom:1px solid $background;
+  }
 }
