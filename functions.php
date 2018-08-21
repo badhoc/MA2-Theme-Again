@@ -30,7 +30,6 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  * @since Twenty Ten 1.0
  */
 
-
 function twentyten_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
@@ -60,11 +59,7 @@ function twentyten_setup() {
 		'default-color' => 'ffffff',
 	) );
 
-	// The custom header business starts here.
-
-//deleted as we hardcoded it
-
-	// ... and thus ends the custom header business.
+	// The custom header business starts here, deleted as we hardcoded it
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
@@ -341,7 +336,7 @@ function sixtySecondDiv() {
 	return '<div class="dr-tool">
             <p class="DR-text">Worried about money?<br>Take the 60 second debt test
             </p>
-            <div class="DR-button"><a id="DR-btn" href="/worried-about-money">Take the test now</a></div>
+            <div class="DR-button"><a id="DR-btn" href="'.site_url().'/worried-about-money">Take the test now</a></div>
         </div>';
 }
 
@@ -369,13 +364,13 @@ function custom_add_item_label_as_class( $classes, $item, $args ) {
 }
 
 /* create the custom excerpt length */
-
+// strip the shortcode added as the captions were still pulling through.
 function custom_excerpt($numberOfWords){
 	$articleContent ='nothing to display';
 	if (has_excerpt()){ //take the excerpt if it has it
-		$articleContent = wp_trim_words(get_the_excerpt(), $numberOfWords, "...");
+		$articleContent = wp_trim_words(strip_shortcodes(get_the_excerpt()), $numberOfWords, "...");
 	} else { //if it doesnt take the content
-		$articleContent = wp_trim_words(get_the_content(), $numberOfWords, "...");
+		$articleContent = wp_trim_words(strip_shortcodes(get_the_excerpt()), $numberOfWords, "...");
 	}
 	echo wpautop($articleContent,0); //strip formatting
 }
@@ -427,10 +422,8 @@ function my_loadmore_ajax_handler(){
 			?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 				<?php if ( has_post_thumbnail() ) : ?>
 				<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-					<?php /* remove this line on live */ $backgroundImg[0] = "https://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
-					<?php /* the_post_thumbnail(); */ ?>
 				<?php else : ?> <!-- add a fallback image incase there is no featured image -->
-						<?php $backgroundImg[0] = "https://s19367.pcdn.co/wordpress/wp-content/uploads/Freebies-featured-306x151.jpg"; ?>
+						<?php $backgroundImg[0] = get_template_directory_uri() . '/images/post_thumb2.jpg'; ?>
 				<?php endif ?>
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
 							<?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
@@ -439,7 +432,7 @@ function my_loadmore_ajax_handler(){
 								<h2 class="entry-title"><?php the_title(); ?></h2>
 					</a>
 					<div class="excerpt-limit">
-								<?php custom_excerpt(); ?>
+								<?php custom_excerpt(20); ?>
 					</div>
 					<p class="readMore">
 						<a id="readmore-btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Read more</a>
@@ -456,7 +449,23 @@ function my_loadmore_ajax_handler(){
 
 }
 
-
-
 add_action('wp_ajax_loadmore', 'my_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'my_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+//Custom function for author info
+function author_info() {
+	do_action('author_info');
+}
+
+// remove links from images, from WPMUDev
+add_filter( 'the_content', 'attachment_image_link_remove_filter' );
+function attachment_image_link_remove_filter( $content ) {
+$content =
+preg_replace(
+array('{<a(.*?)(wp-att|wp-content\/uploads)[^>]*><img}',
+'{ wp-image-[0-9]*" /></a>}'),
+array('<img','" />'),
+$content
+);
+return $content;
+}

@@ -58,7 +58,7 @@
 										$metadata['height']
 									)
 								);
-							}
+							} 
 						?>
 						<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-meta -->

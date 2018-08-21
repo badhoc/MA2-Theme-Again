@@ -35,7 +35,7 @@
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'moneyaware2' ), 'after' => '</div>' ) ); ?>
 				<!-- .entry-content -->
 
-<?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
+
 					<div>
 						<div id="author-avatar">
 							<span id="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 80 ) ); ?></span>
@@ -46,18 +46,18 @@
 						</div><!-- #author-avatar -->
 
 					</div><!-- #entry-author-info -->
-<?php endif; ?>
+
 				<span class="tag-links post-links">
 					<?php twentyten_posted_in(); ?>
 				</span>
 
 					<div class="entry-utility">
-						<?php get_template_part( 'related' ); ?>
-						<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php get_template_part('related'); ?>
+
 					</div><!-- .entry-utility -->
+					<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- #post-## -->
 
-
 				<?php comments_template( '', true ); ?>
-</main>
+		</main>
 <?php endwhile; // end of the loop. ?>

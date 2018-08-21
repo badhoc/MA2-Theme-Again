@@ -11,23 +11,3 @@
       padding: 50px 100px;
   }
 }
-
-table {
-  width:100%;
-  font-size:1rem;
-  margin-top:1.4rem;
-  margin-bottom: 1.4rem;
-  th {
-    font-weight: bold;
-    border-bottom:2px solid $cool-orange;
-    background:$background;
-  }
-  tr:nth-child(even) {
-    background:$background;
-  }
-  td {
-    text-align:left;
-    padding: 1.4rem 1rem;
-    border-bottom:1px solid $background;
-  }
-}
