@@ -10,7 +10,7 @@
  * This can be overridden in child themes with loop-page.php.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.2
  */
 ?>
@@ -25,11 +25,11 @@
 
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'moneyaware2' ), 'after' => '</div>' ) ); ?>
 						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
-				<?php comments_template( '', true ); ?>
+				<?php /* comments_template( '', true ); */ ?>
 
 <?php endwhile; // end of the loop. ?>

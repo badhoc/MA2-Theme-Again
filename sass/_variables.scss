@@ -30,7 +30,7 @@ $br1:5px; /* border radius */
 
 @font-face {
   font-family: 'stepchange';
-  src: url('http://resources.stepchange.org/Portals/_default/Skins/StepChange-Framework/assets/fonts/stepchange.woff');
+  src: url('/fonts/stepchange.woff'), url("fonts/stepchange.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

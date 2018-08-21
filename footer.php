@@ -6,7 +6,7 @@
  * after. Calls sidebar-footer.php for bottom widgets.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 ?>
@@ -18,9 +18,10 @@
 				<div id="colophon">
 					<div id="social-icons">
 						<span class="social-links">
-							<a href="http://www.twitter.com/moneyaware" target="_blank" class="social-twitter"></a>
-							<a href="http://www.facebook.com/moneyaware" target="_blank" class="social-facebook"></a>
-							<a href="http://www.youtube.com/moneyaware" target="_blank" class="social-youtube"></a>
+							<a href="http://www.twitter.com/moneyaware" target="_blank" class="social social-twitter"></a>
+							<a href="http://www.youtube.com/moneyaware" target="_blank" class="social social-youtube"></a>
+							<a href="http://www.facebook.com/moneyaware" target="_blank" class="social social-facebook"></a>
+
 						</span>
 					</div>
 					<?php
@@ -31,13 +32,14 @@
 					?>
 					<div id="site-generator">
 							<div class="footer-logo">
-								<a class="logo" href="/" alt="MoneyAware logo" /><img id="footer-logo" src="http://localhost/wordpress/wp-content/uploads/StepChange_Money_Aware_rgb.jpg"></a>
+								<a class="logo" href="/" alt="MoneyAware logo" /><img id="footer-logo" src="<?php echo get_template_directory_uri() ?>/images/money-aware-logo.png"></a>
 							</div>
 							<?php do_action( 'twentyten_credits' ); ?>
+							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'moneyaware2' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'moneyaware2' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'moneyaware2' ), 'WordPress' ); ?>
+								<?php echo date("Y"); ?></a>
 					</div><!-- #site-generator -->
 					</div><!-- #colophon -->
-					<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'moneyaware2' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'moneyaware2' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'twentyten' ), 'WordPress' ); ?><?php echo date("Y"); ?></a>
-		    <p class="disclaimer">Foundation for Credit Counselling (trading as StepChange Debt Charity) is a company limited by guarantee registered in England and Wales (Company No: 2757055 ) and a charity registered in England and Wales (Registered Charity No: 1016630). Registered office: Wade House, Merrion Centre, Leeds, LS2 8NG. Consumer Credit Counselling Service (Scotland) trading as StepChange Debt Charity Scotland is a company limited by guarantee registered in Scotland (Company No: SC162719) and a charity registered in Scotland (Registered Charity No:SC024413). Registered office: 33 Bothwell Street, Glasgow G2 6NL. Authorised and regulated by the Financial Conduct Authority.</p>
+		    <p class="disclaimer">We link to external websites where they contain relevant information for our visitors. We’re not responsible for the content of these websites, or any infringement on your data rights under data protection regulations by any external website provider.<br><br>Foundation for Credit Counselling (trading as StepChange Debt Charity) is a company limited by guarantee registered in England and Wales (Company No: 2757055 ) and a charity registered in England and Wales (Registered Charity No: 1016630). Registered office: Wade House, Merrion Centre, Leeds, LS2 8NG. Consumer Credit Counselling Service (Scotland) trading as StepChange Debt Charity Scotland is a company limited by guarantee registered in Scotland (Company No: SC162719) and a charity registered in Scotland (Registered Charity No:SC024413). Registered office: 33 Bothwell Street, Glasgow G2 6NL. Authorised and regulated by the Financial Conduct Authority.</p>
 			</div>
 	</footer><!-- #footer -->
 
@@ -51,9 +53,7 @@
 
 	wp_footer();
 ?>
-
-<!-- <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/scripts.js?v=1"></script> -->
-
+<script type="text/JavaScript" async src="<?php echo get_template_directory_uri(); ?>/scripts.js"></script>
 
 <!-- START OF SmartSource Data Collector TAG -->
 <!-- Copyright (c) 1996-2012 Webtrends Inc. All rights reserved. -->

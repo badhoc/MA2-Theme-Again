@@ -96,6 +96,8 @@ article .attachment-post-thumbnail {
   .border-h { margin-top: auto;}
 	@include breakpoint(min-sm){
 		width:32%;
+    margin-left: 0;
+    margin-right: 0;
 	}
 }
 
@@ -241,7 +243,6 @@ article .attachment-post-thumbnail {
   }
 
 /* what is moneyAware styling */
-
 .moneyawareBlurb {
   width:99%;
   margin:auto;
@@ -286,12 +287,12 @@ article .attachment-post-thumbnail {
 /* end of money aware */
 
 /* load more posts */
-
 .loadMorePosts {
   background-color: $hot-orange;
   color: $white;
-  width: 90%;
+  width: 80%;
   margin: auto;
+  margin-bottom:1em;
   text-align: center;
   padding: 0.5rem 0.5em;
   cursor:pointer;
@@ -302,9 +303,3 @@ article .attachment-post-thumbnail {
     width:27%;
   }
 }
-
-.loadMorePosts:hover {
-    background-color:$charcoal;
-    -webkit-transition: all 0.25s;
-    transition: all .25s;
-  }

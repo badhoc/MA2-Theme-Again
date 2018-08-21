@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 /**
  * The Sidebar containing the primary and secondary widget areas.
  *
  * @package WordPress
- * @subpackage Twenty_Ten
+ * @subpackage moneyaware2
  * @since Twenty Ten 1.0
  */
 ?>
@@ -21,7 +21,7 @@
 	if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
 
 			<li id="meta" class="widget-container">
-				<h3 class="widget-title"><?php _e( 'Meta', 'twentyten' ); ?></h3>
+				<h3 class="widget-title"><?php _e( 'Meta', 'moneyaware2' ); ?></h3>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

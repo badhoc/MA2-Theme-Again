@@ -7,7 +7,7 @@
  * @link http://codex.wordpress.org/Author_Templates
  *
  * @package WordPress
- * @subpackage Template
+ * @subpackage moneyaware2
  */
 
 /**
@@ -213,7 +213,7 @@ function the_author_posts_link($deprecated = '') {
 				get_the_author()
 			);
 	}
-	
+
 	echo apply_filters( 'the_author_posts_link', $link );
 }
 

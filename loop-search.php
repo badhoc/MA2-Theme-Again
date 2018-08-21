@@ -23,75 +23,24 @@
 <?php
 global $query_string;
 parse_str( $query_string, $args );
-if(!is_home() && !is_search() ){
-    $args['posts_per_page'] = 6;
-    query_posts($args);
-} elseif (is_search() && !is_front_page() ){
-  $args ['posts_per_page'] = 9;
-  query_posts($args);
-} elseif (is_home()){
-  $args ['posts_per_page'] = 7;
-  query_posts($args);
-} ?>
+$args ['posts_per_page'] = 9;
+query_posts($args);
+?>
 
 <main class="page page--cat">
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
-<?php if ( ! have_posts() ) : ?>
-	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'moneyaware2' ); ?></h1>
-		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'moneyaware2' ); ?></p>
-			<?php get_search_form(); ?>
-		</div><!-- .entry-content -->
-	</div><!-- #post-0 -->
-<?php endif; ?>
-
 
 <section class="flex-container">
-
 
 <?php
 	/* Start the Loop.
 	 *
-	 * In Twenty Ten we use the same loop in multiple contexts.
-	 * It is broken into three main parts: when we're displaying
-	 * posts that are in the gallery category, when we're displaying
-	 * posts in the asides category, and finally all other posts.
-	 *
-	 * Additionally, we sometimes check for whether we are on an
-	 * archive page, a search page, etc., allowing for small differences
-	 * in the loop on each template without actually duplicating
-	 * the rest of the loop that is shared.
-	 *
 	 * Without further ado, the loop:
 	 */ ?>
-	 <?php if (!is_home()) { /* only display on categories not homepage or search */ ?>
 				<div class="page--cat post cat-desc">
-					<h1 class="border-v"><?php
-					if (is_search()) {
-						echo $wp_query->found_posts.' results found for: '.get_search_query();
-					}
-          if (is_tag()){
-            echo "Posts tagged with: ";
-          }
-          if (is_author()){
-            echo "Posts written by: ".get_the_author();
-          }
-          single_cat_title();
-					?></h1>
-					<?php /*kick out a description or search details depending on which page we're on */
-                    $category_description = category_description();
-										if ( ! empty( $category_description ) )
-											echo $category_description;
-										if (is_search()) {
-											echo 'Not what you were looking for? Search again: ';
-											get_search_form();
-										}
-
-				 ?>
-
+					<h1 class="border-v"><?php echo $wp_query->found_posts.' results found for: '.get_search_query();	?></h1>
+					<?php echo 'Not what you were looking for? Search again: '; get_search_form(); ?>
 				</div>
-<?php } ?>
 
 <?php $counter = 0;
 			while ( have_posts() ) : the_post();
@@ -146,57 +95,23 @@ if(!is_home() && !is_search() ){
 <?php /* How to display posts of the Aside format. The asides category is the old way. */ ?>
 
 	<?php elseif ( ( function_exists( 'get_post_format' ) && 'aside' == get_post_format( $post->ID ) ) || in_category( _x( 'asides', 'asides category slug', 'moneyaware2' ) )  ) : ?>
-		aside
+
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-		<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
-			<div class="entry-content">
-				<?php the_content( __( 'Continue reading &raquo;', 'moneyaware2' ) ); ?>
-			</div><!-- .entry-content -->
-		<?php else : ?>
-			<div class="entry-content">
-				<?php the_content( __( 'Continue reading &raquo;', 'moneyaware2' ) ); ?>
-			</div><!-- .entry-content -->
-		<?php endif; ?>
-
-			<div class="entry-utility">
-				<?php twentyten_posted_on(); ?>
-				<span class="meta-sep">|</span>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'moneyaware2' ), __( '1 Comment', 'moneyaware2' ), __( '% Comments', 'moneyaware2' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'moneyaware2' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
-			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
 <?php /* How to display all other posts. */ ?>
 
 <?php else : //change the post to the specific popular post.
-      if( is_home() ){
-        global $post;
-        global $poppostIDs;
-        $poppostIDs = [7331,7226,7065]; //change these numbers to update popular posts
-        switch($counter) {
-            case 5:
-              $post = get_post( $poppostIDs[0], OBJECT );
-              setup_postdata( $post );
-              break;
-            case 6:
-              $post = get_post( $poppostIDs[1], OBJECT );
-              setup_postdata( $post );
-              break;
-            case 7:
-              $post = get_post( $poppostIDs[2], OBJECT );
-              setup_postdata( $post );
-              break;
-      }
-    }
 
     ?>
 
     <?php if (is_home() && $counter == 1){ ?>
       <article id="homepage-info" class="post type-post" >
-                <h1 id="hometitle">Be more money aware</h1>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <h1 id="hometitle">MoneyAware</h1>
+          </a>
           <div id="home-text">
-                <p>Today’s the day you take back financial control and reduce your debt stress! Make the most of your money with income-boosting, money-saving and budgeting-busting tips.</p>
+                <p>StepChange Debt Charity’s blog MoneyAware provides income-boosting, money-saving and budgeting tips to help you make the most of your money and keep debt stress at bay.</p>
           </div>
         </article>
     <?php } else {?>
@@ -205,10 +120,12 @@ if(!is_home() && !is_search() ){
       <?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
 			<?php if ( has_post_thumbnail() ) : ?>
       <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+				<?php /* the_post_thumbnail(); */ ?>
       <?php else : ?> <!-- add a fallback image incase there is no featured image -->
-          <?php $backgroundImg[0] = get_template_directory_uri().'/images/post_thumb2.jpg' ?> <!-- MARK: change this line to switch the fallback image -->
+          <?php $backgroundImg[0] = get_template_directory_uri().'/images/post_thumb2.jpg' ?>
       <?php endif ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
+
         </div></a>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				      <h2 class="entry-title"><?php the_title(); ?></h2>
@@ -237,7 +154,7 @@ echo "<div class='moneyawareBlurb'>
 ?>
 <?php endwhile; // End the loop. Whew. ?>
 <?php
-if ( !is_home() && $wp_query->max_num_pages > 1 )
+if (!is_home() && $wp_query->max_num_pages > 1 )
  echo '<div class="loadMorePosts">Load more posts</div>';
  ?>
 </section>

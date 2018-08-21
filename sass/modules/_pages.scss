@@ -2,10 +2,12 @@
   margin-top: 0;
   background-color: $white;
   padding: 2rem;
+  margin-bottom:1em;
   h1 {
     border-left: 3px solid;
   }
   @media (min-width: $md){
       margin-top: -60px;
+      padding: 50px 100px;
   }
 }
