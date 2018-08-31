@@ -8,7 +8,7 @@ aside,
 audio,
 b,
 big,
-blockquote,
+//blockquote,
 body,
 canvas,
 caption,
@@ -150,4 +150,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+}
+strong {
+  font-weight:bold;
 }

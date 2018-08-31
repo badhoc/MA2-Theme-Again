@@ -193,3 +193,9 @@ table {
     border-bottom:1px solid $background;
   }
 }
+
+blockquote {
+  padding-left:1em;
+  border-left:3px solid $primary-purple;
+  font-style: italic;
+}

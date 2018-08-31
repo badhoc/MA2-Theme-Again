@@ -9,10 +9,10 @@
 }
 
 .flex-container {
-  .type-post {
+  .type-post, .type-page {
     border-width:0;
     border-style:solid;
-    border-color:red;
+    border-color:$charcoal;
     border-left-width:5px;
     @media screen and (min-width: $md){
       border-left-width:0;
@@ -77,7 +77,7 @@ article .attachment-post-thumbnail {
   }
 }
 
-.page--cat .post, .page--cat .type-post{
+.page--cat .post, .page--cat .type-post, .page--cat .type-page{
 	width:96%;
 	background:$white;
 	display:inline-block;
@@ -109,7 +109,6 @@ article .attachment-post-thumbnail {
     border-left: 3px solid;
   }
 	.wp-post-image { display:none; }
-
 }
 
 .article, .page--cat .post:first-child {
@@ -302,4 +301,10 @@ article .attachment-post-thumbnail {
   @media (min-width:$md) {
     width:27%;
   }
+}
+
+@media (min-width:$md) {
+.title-link {
+  min-height:9em;
+}
 }

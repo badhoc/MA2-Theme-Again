@@ -5,8 +5,8 @@
   padding:1em;
   display:flex;
   flex-flow:column nowrap;
-  p {
-    color:$white;
+  #DR-text {
+    color:white;
   }
   a {
     color:$white;
@@ -15,12 +15,19 @@
     padding:0.5em 1em;
     border-radius:6px;
   }
+  a:hover {
+    background: $white;
+    color:$primary-purple;
+    -webkit-transition: all 0.25s;
+    transition: all .25s;
+  }
   @media (min-width:$md){
     flex-flow:row nowrap;
     justify-content: space-between;
     align-items: center;
     p {
       margin-bottom:0;
+      color:white;
     }
   }
 }

@@ -1,4 +1,4 @@
-.type-page {
+.pagecontent >.type-page {
   margin-top: 0;
   background-color: $white;
   padding: 2rem;
@@ -9,5 +9,6 @@
   @media (min-width: $md){
       margin-top: -60px;
       padding: 50px 100px;
+      max-width:850px;
   }
 }

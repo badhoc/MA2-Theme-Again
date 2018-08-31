@@ -381,10 +381,10 @@ function my_load_more_scripts() {
 	global $wp_query;
 
 	// In most cases it is already included on the page and this line can be removed
-	wp_enqueue_script('jquery');
+	//wp_enqueue_script('jquery');
 
 	// register our main script but do not enqueue it yet
-	wp_register_script( 'my_loadmore', get_template_directory_uri().'/myloadmore.js', array('jquery') );
+	wp_register_script( 'my_loadmore', get_template_directory_uri().'/myloadmore.js#asyncload', array('jquery') );
 
 	// now the most interesting part
 	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
@@ -452,6 +452,7 @@ function my_loadmore_ajax_handler(){
 add_action('wp_ajax_loadmore', 'my_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'my_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
+
 //Custom function for author info
 function author_info() {
 	do_action('author_info');
@@ -469,3 +470,16 @@ $content
 );
 return $content;
 }
+
+//to try and speed things up this filters urls with #asyncload to add the async attribute to the script stockoverflow q18944027
+
+function add_async_forscript($url)
+{
+    if (strpos($url, '#asyncload')===false)
+        return $url;
+    else if (is_admin())
+        return str_replace('#asyncload', '', $url);
+    else
+        return str_replace('#asyncload', '', $url)."' async='async";
+}
+add_filter('clean_url', 'add_async_forscript', 11, 1);

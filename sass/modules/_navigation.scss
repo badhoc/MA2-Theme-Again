@@ -73,8 +73,9 @@
 
 /* rotate first bar */
 	.bar-change .bar1 {
-		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-8px, 6px);
+		-webkit-transform: rotate(-45deg) translate(-8px, 7px);
+    transform: rotate(-45deg) translate(-8px, 7px);
+		width:34px;
 	}
 
 	.bar-change .bar2 {
@@ -84,6 +85,7 @@
 	.bar-change .bar3 {
 		-webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
+		width:34px;
 	}
 
 .nav2 {

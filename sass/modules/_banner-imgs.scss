@@ -5,6 +5,7 @@
 	background-size: cover;
 	@include breakpoint(min-sm){
 		height:340px;
+		background-position: center;
 	}
 }
 
@@ -40,7 +41,7 @@
     background-size: cover;
     background-position-y: 60px;
     @media (min-width: $md) {
-      background-position:top;
+      background-position:center;
     }
 }
 
@@ -89,7 +90,6 @@
     background-position-y: 60px;
     @media (min-width: $md) {
       background-position:top;
-			background-position-x:-50px;
     }
 }
 

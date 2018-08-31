@@ -31,11 +31,13 @@ if(!is_home() && !is_search() ){
   query_posts($args);
 } elseif (is_home()){
   $args ['posts_per_page'] = 7;
+  $args ['offset'] = -1;
   query_posts($args);
 } ?>
 
 <main class="page page--cat">
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
+<?php rewind_posts(); ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
 		<h1 class="entry-title"><?php _e( 'Not Found', 'moneyaware2' ); ?></h1>
@@ -92,6 +94,7 @@ if(!is_home() && !is_search() ){
 
 				</div>
 <?php } ?>
+
 
 <?php $counter = 0;
 			while ( have_posts() ) : the_post();
@@ -173,7 +176,7 @@ if(!is_home() && !is_search() ){
       if( is_home() ){
         global $post;
         global $poppostIDs;
-        $poppostIDs = [7331,7226,7065]; //change these numbers to update popular posts
+        $poppostIDs = [7457,7226,7065]; //change these numbers to update popular posts or pages
         switch($counter) {
             case 5:
               $post = get_post( $poppostIDs[0], OBJECT );
