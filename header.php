@@ -89,11 +89,11 @@ js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=393971940674968";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<!-- Actual website header starts here -->
 <header class="u-bg--white">
 	<div class="pageheader">
 		<div class="header-top">
 		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" alt="moneyaware logo" src="<?php echo get_template_directory_uri(); ?>/images/money-aware-logo.png"></a>
-<!-- old menu design was in here -->
 <div id="access" role="navigation">
 	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'moneyaware2' ); ?>"><?php _e( 'Skip to content', 'moneyaware2' ); ?></a></div>
@@ -106,7 +106,6 @@ fjs.parentNode.insertBefore(js, fjs);
 		  <div class="bar bar2"></div>
 		  <div class="bar bar3"></div>
 		</div>
-	<!--	<p class="menuLabel">Menu</p> -->
 	</div>
 </div>
 		<nav class="nav2 hide-it" role="navigation">
@@ -118,10 +117,10 @@ fjs.parentNode.insertBefore(js, fjs);
 </header>
 
 <div id="wrapper" class="hfeed">
-
+<!-- end of menu -->
 
 <!-- change the banner image based on which page you're on -->
-	<div id="main"><?php
+	<div id="main"><?php //MARK Change things here to add more classes in or change stuff.
 		$imageClass = '';
 	if (is_home()) { //homepage
 			$imageClass = 'home-img';
