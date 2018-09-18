@@ -21,23 +21,17 @@
 
 <?php /* If on a category page or not the homepage change the number of posts shown from 7 to 6 */ ?>
 <?php
-global $query_string;
+ global $query_string;
 parse_str( $query_string, $args );
-if(!is_home() && !is_search() ){
-    $args['posts_per_page'] = 6;
-    query_posts($args);
-} elseif (is_search() && !is_front_page() ){
-  $args ['posts_per_page'] = 9;
+if (is_front_page()){
+  $args['posts_per_page'] = 9;
   query_posts($args);
-} elseif (is_home()){
-  $args ['posts_per_page'] = 7;
-  $args ['offset'] = -1;
-  query_posts($args);
-} ?>
+}
+
+?>
 
 <main class="page page--cat">
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
-<?php rewind_posts(); ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
 		<h1 class="entry-title"><?php _e( 'Not Found', 'moneyaware2' ); ?></h1>
@@ -67,7 +61,14 @@ if(!is_home() && !is_search() ){
 	 *
 	 * Without further ado, the loop:
 	 */ ?>
-	 <?php if (!is_home()) { /* only display on categories not homepage or search */ ?>
+	 <?php if (is_home()) {?>
+     <article id="homepage-info" class="post type-post" >
+               <h1 id="hometitle">Be more money aware</h1>
+         <div id="home-text">
+               <p>Today’s the day you take back financial control and reduce your debt stress! Make the most of your money with income-boosting, money-saving and budgeting-busting tips.</p>
+         </div>
+       </article>
+<?php  } else { /* only display on categories not homepage or search */ ?>
 				<div class="page--cat post cat-desc">
 					<h1 class="border-v"><?php
 					if (is_search()) {
@@ -94,7 +95,6 @@ if(!is_home() && !is_search() ){
 
 				</div>
 <?php } ?>
-
 
 <?php $counter = 0;
 			while ( have_posts() ) : the_post();
@@ -149,7 +149,6 @@ if(!is_home() && !is_search() ){
 <?php /* How to display posts of the Aside format. The asides category is the old way. */ ?>
 
 	<?php elseif ( ( function_exists( 'get_post_format' ) && 'aside' == get_post_format( $post->ID ) ) || in_category( _x( 'asides', 'asides category slug', 'moneyaware2' ) )  ) : ?>
-		aside
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
@@ -176,46 +175,52 @@ if(!is_home() && !is_search() ){
       if( is_home() ){
         global $post;
         global $poppostIDs;
-        $poppostIDs = [7457,7226,7065]; //change these numbers to update popular posts or pages
+        $poppostIDs = [2893,2893,7142,7457,7226,7065]; //MARK change these numbers to update how to and popular section with posts or pages
         switch($counter) {
-            case 5:
+            case 4:
               $post = get_post( $poppostIDs[0], OBJECT );
               setup_postdata( $post );
               break;
-            case 6:
+            case 5:
               $post = get_post( $poppostIDs[1], OBJECT );
               setup_postdata( $post );
               break;
-            case 7:
+            case 6:
               $post = get_post( $poppostIDs[2], OBJECT );
               setup_postdata( $post );
               break;
+						case 7:
+							$post = get_post( $poppostIDs[3], OBJECT );
+							setup_postdata( $post );
+							break;
+						case 8:
+							$post = get_post( $poppostIDs[4], OBJECT );
+							setup_postdata( $post );
+							break;
+						case 9:
+							$post = get_post( $poppostIDs[5], OBJECT );
+							setup_postdata( $post );
+							break;
       }
     }
 
     ?>
 
-    <?php if (is_home() && $counter == 1){ ?>
-      <article id="homepage-info" class="post type-post" >
-                <h1 id="hometitle">Be more money aware</h1>
-          <div id="home-text">
-                <p>Today’s the day you take back financial control and reduce your debt stress! Make the most of your money with income-boosting, money-saving and budgeting-busting tips.</p>
-          </div>
-        </article>
-    <?php } else {?>
-
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-      <?php if(is_home() && $counter > 4){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
+			<?php if(is_home() && $counter < 7 && $counter > 3 ){ echo '<div class="popular">&bigstar; How To</div>'; }; ?>
+      <?php if(is_home() && $counter > 6){ echo '<div class="popular">&bigstar; Popular</div>'; }; ?>
 			<?php if ( has_post_thumbnail() ) : ?>
-      <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+      <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );?>
       <?php else : ?> <!-- add a fallback image incase there is no featured image -->
           <?php $backgroundImg[0] = get_template_directory_uri().'/images/post_thumb2.jpg' ?> <!-- MARK: change this line to switch the fallback image -->
       <?php endif ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><div class="post-img" style="background: url('<?php echo $backgroundImg[0]; ?>') no-repeat center center; background-size:cover;-webkit-background-size: cover; -moz-background-size: cover;-o-background-size: cover; ">
         </div></a>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				      <h2 class="entry-title"><?php the_title(); ?></h2>
-				</a>
+        <div class="title-link">
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+  				      <h2 class="entry-title"><?php the_title(); ?></h2>
+  				</a>
+        </div>
         <div class="excerpt-limit">
 				      <?php custom_excerpt(20); ?>
         </div>
@@ -228,9 +233,8 @@ if(!is_home() && !is_search() ){
 		</article><!-- #post-## -->
 
 
-	<?php } endif; // This was the if statement that broke the loop into three parts based on categories. ?>
-<?php if ($counter == 3 && !is_home() && !is_search() && !is_tag() || $counter == 4 && is_home() && !is_search()  && !is_tag())
-{
+	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
+<?php if ($counter == 3 && !is_search() && !is_tag() || $counter == 6 && is_front_page()) {
 echo "<div class='moneyawareBlurb'>
 			<div class='sixtySecond-category'>
 			<p>Worried about money? Take the 60-second debt test</p>
@@ -238,7 +242,9 @@ echo "<div class='moneyawareBlurb'>
 			</div>";
 		}
 ?>
-<?php endwhile; // End the loop. Whew. ?>
+<?php endwhile; // End the loop. Whew.
+wp_reset_postdata();
+?>
 <?php
 if ( !is_home() && $wp_query->max_num_pages > 1 )
  echo '<div class="loadMorePosts">Load more posts</div>';

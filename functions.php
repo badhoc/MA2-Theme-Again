@@ -62,21 +62,21 @@ function twentyten_setup() {
 	// The custom header business starts here, deleted as we hardcoded it
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-	register_default_headers( array(
+/*	register_default_headers( array(
 		'berries' => array(
 			'url' => '%s/images/headers/woman-looking-right.jpg',
-			'thumbnail_url' => '%s/images/headers/woman-looking-right-thumbnail.jpg',
+			'thumbnail_url' => '%s/images/headers/woman-looking-right-thumbnail.jpg', */
 			/* translators: header image description */
-			'description' => __( 'Woman looking right', 'moneyaware2' )
+	/*		'description' => __( 'Woman looking right', 'moneyaware2' )
 		),
 		'hanoi' => array(
 			'url' => '%s/images/headers/hanoi.jpg',
-			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg',
+			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg', */
 			/* translators: header image description */
-			'description' => __( 'Hanoi Plant', 'moneyaware2' )
+	/*		'description' => __( 'Hanoi Plant', 'moneyaware2' )
 			)
 
-	) );
+	) ); */
 }
 endif;
 
@@ -343,7 +343,7 @@ function sixtySecondDiv() {
 add_shortcode('sixtySecond','sixtySecondDiv');
 
 /* Exclude pages from WordPress Search mainly as they break the formatting */
-
+/*
 if (!is_admin()) {
 	function our_search_filter($query) {
 		if ($query->is_search) {
@@ -353,7 +353,7 @@ if (!is_admin()) {
 	}
 add_filter('pre_get_posts','our_search_filter');
 }
-
+*/
 /* add the link title as the class to register_nav_menus */
 
 add_filter( 'nav_menu_css_class', 'custom_add_item_label_as_class', 10, 3 );
@@ -381,7 +381,7 @@ function my_load_more_scripts() {
 	global $wp_query;
 
 	// In most cases it is already included on the page and this line can be removed
-	//wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery');
 
 	// register our main script but do not enqueue it yet
 	wp_register_script( 'my_loadmore', get_template_directory_uri().'/myloadmore.js#asyncload', array('jquery') );
@@ -452,7 +452,6 @@ function my_loadmore_ajax_handler(){
 add_action('wp_ajax_loadmore', 'my_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'my_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
-
 //Custom function for author info
 function author_info() {
 	do_action('author_info');
@@ -463,7 +462,7 @@ add_filter( 'the_content', 'attachment_image_link_remove_filter' );
 function attachment_image_link_remove_filter( $content ) {
 $content =
 preg_replace(
-array('{<a(.*?)(wp-att|wp-content\/uploads)[^>]*><img}',
+array('{<a(.*?)(wp-att|uk\/wp-content\/uploads)[^>]*><img}',
 '{ wp-image-[0-9]*" /></a>}'),
 array('<img','" />'),
 $content

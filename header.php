@@ -11,7 +11,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" /> -->
+<link rel="stylesheet" type="text/css" media="all" href="http://mkt00587/wordpress/wp-content/themes/MoneyAware%202/style.css" />
 <meta name="twitter:site" content="@MoneyAware">
 <meta property="twitter:account_id" content="1592145024" />
 <meta property="fb:app_id" content="393971940674968"/>
@@ -91,7 +92,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <header class="u-bg--white">
 	<div class="pageheader">
 		<div class="header-top">
-		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" src="<?php echo get_template_directory_uri(); ?>/images/money-aware-logo.png"></a>
+		<a class="logo" href="/" alt="MoneyAware logo" /><img class="header-logo" alt="moneyaware logo" src="<?php echo get_template_directory_uri(); ?>/images/money-aware-logo.png"></a>
 <!-- old menu design was in here -->
 <div id="access" role="navigation">
 	<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>

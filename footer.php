@@ -18,9 +18,9 @@
 				<div id="colophon">
 					<div id="social-icons">
 						<span class="social-links">
-							<a href="http://www.twitter.com/moneyaware" target="_blank" class="social social-twitter"></a>
-							<a href="http://www.youtube.com/moneyaware" target="_blank" class="social social-youtube"></a>
-							<a href="http://www.facebook.com/moneyaware" target="_blank" class="social social-facebook"></a>
+							<a href="http://www.twitter.com/moneyaware" target="_blank" class="social social-twitter" alt="link to twitter" rel="noopener"></a>
+							<a href="http://www.youtube.com/moneyaware" target="_blank" class="social social-youtube" alt="link to youtube" rel="noopener"></a>
+							<a href="http://www.facebook.com/moneyaware" target="_blank" class="social social-facebook" alt="link to facebook" rel="noopener"></a>
 
 						</span>
 					</div>
@@ -32,7 +32,7 @@
 					?>
 					<div id="site-generator">
 							<div class="footer-logo">
-								<a class="logo" href="/" alt="MoneyAware logo" /><img id="footer-logo" src="<?php echo get_template_directory_uri() ?>/images/money-aware-logo.png"></a>
+								<a class="logo" href="/" alt="MoneyAware logo" /><img id="footer-logo" alt="stepchange logo" src="<?php echo get_template_directory_uri() ?>/images/money-aware-logo.png"></a>
 							</div>
 							<?php do_action( 'twentyten_credits' ); ?>
 							<a href="<?php echo esc_url( __( 'http://www.stepchange.org/', 'moneyaware2' ) ); ?>" title="<?php esc_attr_e( 'Debt Charity', 'moneyaware2' ); ?>" rel="generator">&copy; <?php printf( __( 'StepChange Debt Charity', 'moneyaware2' ), 'WordPress' ); ?>
@@ -60,7 +60,7 @@
 <!-- Version: 9.4.0 -->
 <!-- Tag Builder Version: 4.1 -->
 <!-- Created: 9/26/2012 11:28:39 AM -->
-<script src="http://www.stepchange.org/scripts/moneyaware_dcs.js" type="text/javascript"></script>
+<script src="https://www.stepchange.org/scripts/moneyaware_dcs.js" type="text/javascript"></script>
 <!-- ----------------------------------------------------------------------------------- -->
 <!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
 <!-- JavaScript include file can cause serious problems with cross-domain tracking. -->

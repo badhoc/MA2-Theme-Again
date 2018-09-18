@@ -545,7 +545,7 @@ strong {
   border-left: 3px solid #6B3374;
 }
 
-#home-text {
+#home-text p {
   margin-bottom: 0;
 }
 
@@ -1207,13 +1207,13 @@ footer {
 
 @media (min-width: 1024px) {
   #colophon {
-    flex-flow: row nowrap;
-  }
-  #colophon #footer-widget-area {
-    width: 80%;
-    display: inline-flex;
-    justify-content: space-around;
-    align-items: center;
+    /*    flex-flow: row nowrap;
+    #footer-widget-area {
+      width:80%;
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+    } */
   }
 }
 
@@ -1318,7 +1318,9 @@ footer {
 @media (min-width: 1024px) {
   #site-generator {
     max-width: 20%;
-    text-align: right;
+    /*  text-align:right; */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

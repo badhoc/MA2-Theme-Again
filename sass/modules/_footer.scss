@@ -22,13 +22,16 @@ footer {
     }
   }
   @media (min-width:$lg){
-    flex-flow: row nowrap;
+    #footer-logo {
+
+    }
+ /*    flex-flow: row nowrap;
     #footer-widget-area {
       width:80%;
       display: inline-flex;
       justify-content: space-around;
       align-items: center;
-    }
+    } */
   }
   .textwidget {
     text-align: center;
@@ -122,7 +125,9 @@ footer {
     text-align: center;
   @media (min-width:$lg) {
     max-width:20%;
-    text-align:right;
+  /*  text-align:right; */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

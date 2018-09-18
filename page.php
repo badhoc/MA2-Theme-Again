@@ -15,7 +15,7 @@
 get_header(); ?>
 
 		<div id="container">
-			<div id="content" role="main">
+			<div id="content" role="main" class="pagecontent">
 
 			<?php
 			/* Run the loop to output the page.
